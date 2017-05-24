@@ -1,5 +1,13 @@
 # nifi-swagger-client
 
+Api Java client webservice for Nifi that build with swagger.
+
+The client web Service accept authentication with OAuth2.
+
+The version of product correspond to the nifi api version.
+
+1.1.0 is build with API Nifi 1.1.0
+
 ## Requirements
 
 Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
@@ -26,7 +34,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>fr.hpencole.nifi</groupId>
+    <groupId>com.github.hermannpencole</groupId>
     <artifactId>nifi-swagger-client</artifactId>
     <version>1.1.0</version>
     <scope>compile</scope>
@@ -38,7 +46,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "fr.hpencole.nifi:nifi-swagger-client:1.1.0"
+compile "com.github.hermannpencole:nifi-swagger-client:1.1.0"
 ```
 
 ### Others
@@ -60,10 +68,10 @@ Example Call with OAuth2 access token
 
 ```java
 
-import fr.hpencole.nifi.swagger.*;
-import fr.hpencole.nifi.swagger.auth.*;
-import fr.hpencole.nifi.swagger.client.model.*;
-import fr.hpencole.nifi.swagger.client.AccessApi;
+import com.github.hermannpencole.nifi.swagger.*;
+import com.github.hermannpencole.nifi.swagger.auth.*;
+import com.github.hermannpencole.nifi.swagger.client.model.*;
+import com.github.hermannpencole.nifi.swagger.client.AccessApi;
 
 import java.io.File;
 import java.util.*;
@@ -92,11 +100,11 @@ And after
 
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.FlowApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.FlowApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 FlowApi apiInstance = new FlowApi();

@@ -1,6 +1,6 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "fr.hpencole.nifi",
+    organization := "com.github.hermannpencole",
     name := "nifi-swagger-client",
     version := "1.1.0",
     scalaVersion := "2.11.4",
