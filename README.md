@@ -4,31 +4,17 @@ Api Java client webservice for Nifi that build with swagger.
 
 The client web Service accept authentication with OAuth2.
 
-The version of product correspond to the nifi api version.
+## Essential Information
 
-1.1.0 is build with API Nifi 1.1.0
+### License
 
-## Requirements
+The license is Apache 2.0, see LICENSE-2.0.txt.
 
-Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
+### Binary Releases
 
-## Installation
+You can find published releases on Maven Central.
 
-To install the API client library to your local Maven repository, simply execute:
-
-```shell
-mvn install
-```
-
-To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
-
-```shell
-mvn deploy
-```
-
-Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
-
-### Maven users
+#### Maven users
 
 Add this dependency to your project's POM:
 
@@ -41,7 +27,15 @@ Add this dependency to your project's POM:
 </dependency>
 ```
 
-### Gradle users
+#### sbt users:
+
+Add this dependency to your project's build file:
+
+```
+libraryDependencies += "com.github.hermannpencole" % "nifi-swagger-client" % "1.1.0"
+```
+
+#### Gradle users
 
 Add this dependency to your project's build file:
 
@@ -49,16 +43,19 @@ Add this dependency to your project's build file:
 compile "com.github.hermannpencole:nifi-swagger-client:1.1.0"
 ```
 
-### Others
+#### Others
 
-At first generate the JAR by executing:
+Link for direct download if you don't use a dependency manager:
 
-    mvn package
+- [http://central.maven.org/maven2/com/github/hermannpencole/nifi-swagger-client/](http://central.maven.org/maven2/com/github/hermannpencole/nifi-swagger-client/)
 
-Then manually install the following JARs:
+### Release Notes
 
-* target/nifi-swagger-client-1.1.0.jar
-* target/lib/*.jar
+The version of product correspond to the nifi api version.
+
+1.1.0 is build with API Nifi 1.1.0
+
+
 
 ## Getting Started
 
@@ -505,17 +502,35 @@ Authentication schemes defined for the API:
 
 - **Type**: OAuth
 - **Flow**: implicit
-- **Authorizatoin URL**: http://localhost/api/oauth/dialog
-- **Scopes**: 
-  - write:pets: modify pets in your account
-  - read:pets: read your pets
+
+  ​
 
 
 ## Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
+## Building api
+
+Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
+
+### Installation
+
+To install the API client library to your local Maven repository, simply execute:
+
+```shell
+mvn install
+```
+
+To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
+
+```shell
+mvn deploy
+```
+
+Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
+
 ## Author
 
-dev@nifi.apache.org
+hermannpencole@yahoo.fr
 
