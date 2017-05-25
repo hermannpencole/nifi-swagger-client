@@ -2,6 +2,9 @@
 
 Api Java client webservice for Nifi that build with swagger.
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.hermannpencole/nifi-swagger-client/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.hermannpencole/nifi-swagger-client)
+[![Build Status](https://travis-ci.org/hermannpencole/nifi-swagger-client.svg?branch=master)](https://travis-ci.org/hermannpencole/nifi-swagger-client)
+
 The client web Service accept authentication with OAuth2.
 
 ## Essential Information
