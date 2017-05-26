@@ -23,8 +23,8 @@ The token returned is formatted as a JSON Web Token (JWT). The token is base64 e
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.client.AccessApi;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
 
 
 AccessApi apiInstance = new AccessApi();
@@ -70,8 +70,8 @@ The token returned is formatted as a JSON Web Token (JWT). The token is base64 e
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.client.AccessApi;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
 
 
 AccessApi apiInstance = new AccessApi();
@@ -111,8 +111,8 @@ The token returned is a base64 encoded string. It is valid for a single request 
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.client.AccessApi;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
 
 
 AccessApi apiInstance = new AccessApi();
@@ -152,8 +152,8 @@ The token returned is a base64 encoded string. It is valid for a single request 
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.client.AccessApi;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
 
 
 AccessApi apiInstance = new AccessApi();
@@ -193,8 +193,8 @@ Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.client.AccessApi;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
 
 
 AccessApi apiInstance = new AccessApi();
@@ -234,8 +234,8 @@ Retrieves the access configuration for this NiFi
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.client.AccessApi;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
 
 
 AccessApi apiInstance = new AccessApi();
