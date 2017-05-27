@@ -535,5 +535,5 @@ Refer to the [official documentation](https://maven.apache.org/plugins/maven-dep
 
 ## Author
 
-hermannpencole@yahoo.fr
+Hermann Pencolé
 
