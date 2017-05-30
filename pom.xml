@@ -193,7 +193,7 @@
         <connection>scm:git:https://github.com/hermannpencole/nifi-swagger-client</connection>
         <developerConnection>scm:git:https://github.com/hermannpencole/nifi-swagger-client</developerConnection>
         <url>https://github.com/hermannpencole/nifi-swagger-client</url>
-        <tag>HEAD</tag>
+        <tag>nifi-swagger-client-1.0</tag>
     </scm>
 
   <dependencies>
