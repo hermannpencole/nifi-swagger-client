@@ -105,7 +105,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The reporting task id. |
- **propertyName** | **String**| The property name. |
+ **propertyName** | **String**| The property name. | [optional]
 
 ### Return type
 
@@ -251,8 +251,8 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ReportingTasksApi apiInstance = new ReportingTasksApi();
 String id = "id_example"; // String | The reporting task id.
-String version = "version_example"; // String | The revision is used to verify the client is working with the latest version of the flow.
-String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
+Object version = null; // Object | The revision is used to verify the client is working with the latest version of the flow.
+Object clientId = null; // Object | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 try {
     ReportingTaskEntity result = apiInstance.removeReportingTask(id, version, clientId);
     System.out.println(result);
@@ -267,8 +267,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The reporting task id. |
- **version** | **String**| The revision is used to verify the client is working with the latest version of the flow. | [optional]
- **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **version** | [**Object**](.md)| The revision is used to verify the client is working with the latest version of the flow. | [optional]
+ **clientId** | [**Object**](.md)| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
 
 ### Return type
 
@@ -323,7 +323,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The reporting task id. |
- **body** | [**ReportingTaskEntity**](ReportingTaskEntity.md)| The reporting task configuration details. |
+ **body** | [**ReportingTaskEntity**](ReportingTaskEntity.md)| The reporting task configuration details. | [optional]
 
 ### Return type
 

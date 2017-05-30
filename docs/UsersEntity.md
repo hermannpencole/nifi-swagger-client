@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**generated** | **String** | When this content was generated. |  [optional]
+**generated** | [**DateTime**](DateTime.md) |  |  [optional]
 **users** | [**List&lt;UserEntity&gt;**](UserEntity.md) |  |  [optional]
 
 

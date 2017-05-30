@@ -90,8 +90,8 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessorsApi apiInstance = new ProcessorsApi();
 String id = "id_example"; // String | The processor id.
-String version = "version_example"; // String | The revision is used to verify the client is working with the latest version of the flow.
-String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
+Object version = null; // Object | The revision is used to verify the client is working with the latest version of the flow.
+Object clientId = null; // Object | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 try {
     ProcessorEntity result = apiInstance.deleteProcessor(id, version, clientId);
     System.out.println(result);
@@ -106,8 +106,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The processor id. |
- **version** | **String**| The revision is used to verify the client is working with the latest version of the flow. | [optional]
- **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **version** | [**Object**](.md)| The revision is used to verify the client is working with the latest version of the flow. | [optional]
+ **clientId** | [**Object**](.md)| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
 
 ### Return type
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="getPropertyDescriptor"></a>
 # **getPropertyDescriptor**
-> PropertyDescriptorEntity getPropertyDescriptor(id, propertyName, clientId)
+> PropertyDescriptorEntity getPropertyDescriptor(id, clientId, propertyName)
 
 Gets the descriptor for a processor property
 
@@ -200,10 +200,10 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessorsApi apiInstance = new ProcessorsApi();
 String id = "id_example"; // String | The processor id.
+Object clientId = null; // Object | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 String propertyName = "propertyName_example"; // String | The property name.
-String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 try {
-    PropertyDescriptorEntity result = apiInstance.getPropertyDescriptor(id, propertyName, clientId);
+    PropertyDescriptorEntity result = apiInstance.getPropertyDescriptor(id, clientId, propertyName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessorsApi#getPropertyDescriptor");
@@ -216,8 +216,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The processor id. |
- **propertyName** | **String**| The property name. |
- **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **clientId** | [**Object**](.md)| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **propertyName** | **String**| The property name. | [optional]
 
 ### Return type
 
@@ -325,7 +325,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The processor id. |
- **body** | [**ProcessorEntity**](ProcessorEntity.md)| The processor configuration details. |
+ **body** | [**ProcessorEntity**](ProcessorEntity.md)| The processor configuration details. | [optional]
 
 ### Return type
 

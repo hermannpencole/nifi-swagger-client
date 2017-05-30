@@ -8,11 +8,7 @@ Name | Type | Description | Notes
 **version** | **String** | The version of this NiFi. |  [optional]
 **uri** | **String** | The URI for the NiFi. |  [optional]
 **contentViewerUrl** | **String** | The URL for the content viewer if configured. |  [optional]
-**timezone** | **String** | The timezone of the NiFi instance. |  [optional]
-**buildTag** | **String** | Build tag |  [optional]
-**buildRevision** | **String** | Build revision or commit hash |  [optional]
-**buildBranch** | **String** | Build branch |  [optional]
-**buildTimestamp** | **String** | Build timestamp |  [optional]
+**timezone** | [**DateTime**](DateTime.md) | The timezone of the NiFi instance. |  [optional]
 
 
 

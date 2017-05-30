@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="commitInputPortTransaction"></a>
 # **commitInputPortTransaction**
-> TransactionResultEntity commitInputPortTransaction(responseCode, portId, transactionId)
+> TransactionResultEntity commitInputPortTransaction(portId, transactionId, responseCode)
 
 Commit or cancel the specified transaction
 
@@ -37,11 +37,11 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 DataTransferApi apiInstance = new DataTransferApi();
-Integer responseCode = 56; // Integer | The response code. Available values are BAD_CHECKSUM(19), CONFIRM_TRANSACTION(12) or CANCEL_TRANSACTION(15).
 String portId = "portId_example"; // String | The input port id.
 String transactionId = "transactionId_example"; // String | The transaction id.
+Integer responseCode = 56; // Integer | The response code. Available values are BAD_CHECKSUM(19), CONFIRM_TRANSACTION(12) or CANCEL_TRANSACTION(15).
 try {
-    TransactionResultEntity result = apiInstance.commitInputPortTransaction(responseCode, portId, transactionId);
+    TransactionResultEntity result = apiInstance.commitInputPortTransaction(portId, transactionId, responseCode);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DataTransferApi#commitInputPortTransaction");
@@ -53,9 +53,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **responseCode** | **Integer**| The response code. Available values are BAD_CHECKSUM(19), CONFIRM_TRANSACTION(12) or CANCEL_TRANSACTION(15). |
  **portId** | **String**| The input port id. |
  **transactionId** | **String**| The transaction id. |
+ **responseCode** | **Integer**| The response code. Available values are BAD_CHECKSUM(19), CONFIRM_TRANSACTION(12) or CANCEL_TRANSACTION(15). | [optional]
 
 ### Return type
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 <a name="commitOutputPortTransaction"></a>
 # **commitOutputPortTransaction**
-> TransactionResultEntity commitOutputPortTransaction(responseCode, checksum, portId, transactionId)
+> TransactionResultEntity commitOutputPortTransaction(portId, transactionId, responseCode, checksum)
 
 Commit or cancel the specified transaction
 
@@ -94,12 +94,12 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 DataTransferApi apiInstance = new DataTransferApi();
-Integer responseCode = 56; // Integer | The response code. Available values are CONFIRM_TRANSACTION(12) or CANCEL_TRANSACTION(15).
-String checksum = "checksum_example"; // String | A checksum calculated at client side using CRC32 to check flow file content integrity. It must match with the value calculated at server side.
 String portId = "portId_example"; // String | The output port id.
 String transactionId = "transactionId_example"; // String | The transaction id.
+Integer responseCode = 56; // Integer | The response code. Available values are CONFIRM_TRANSACTION(12) or CANCEL_TRANSACTION(15).
+String checksum = "checksum_example"; // String | A checksum calculated at client side using CRC32 to check flow file content integrity. It must match with the value calculated at server side.
 try {
-    TransactionResultEntity result = apiInstance.commitOutputPortTransaction(responseCode, checksum, portId, transactionId);
+    TransactionResultEntity result = apiInstance.commitOutputPortTransaction(portId, transactionId, responseCode, checksum);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DataTransferApi#commitOutputPortTransaction");
@@ -111,10 +111,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **responseCode** | **Integer**| The response code. Available values are CONFIRM_TRANSACTION(12) or CANCEL_TRANSACTION(15). |
- **checksum** | **String**| A checksum calculated at client side using CRC32 to check flow file content integrity. It must match with the value calculated at server side. |
  **portId** | **String**| The output port id. |
  **transactionId** | **String**| The transaction id. |
+ **responseCode** | **Integer**| The response code. Available values are CONFIRM_TRANSACTION(12) or CANCEL_TRANSACTION(15). | [optional]
+ **checksum** | **String**| A checksum calculated at client side using CRC32 to check flow file content integrity. It must match with the value calculated at server side. | [optional]
 
 ### Return type
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/octet-stream
  - **Accept**: application/json
 
 <a name="extendInputPortTransactionTTL"></a>
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 <a name="transferFlowFiles"></a>
 # **transferFlowFiles**
-> StreamingOutput transferFlowFiles(portId, transactionId)
+> transferFlowFiles(portId, transactionId)
 
 Transfer flow files from the output port
 
@@ -376,8 +376,7 @@ DataTransferApi apiInstance = new DataTransferApi();
 String portId = "portId_example"; // String | The output port id.
 String transactionId = "transactionId_example"; // String | 
 try {
-    StreamingOutput result = apiInstance.transferFlowFiles(portId, transactionId);
-    System.out.println(result);
+    apiInstance.transferFlowFiles(portId, transactionId);
 } catch (ApiException e) {
     System.err.println("Exception when calling DataTransferApi#transferFlowFiles");
     e.printStackTrace();
@@ -393,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StreamingOutput**](StreamingOutput.md)
+null (empty response body)
 
 ### Authorization
 

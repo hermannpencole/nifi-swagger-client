@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **position** | [**PositionDTO**](PositionDTO.md) | The position of this component in the UI if applicable. |  [optional]
 **permissions** | [**PermissionsDTO**](PermissionsDTO.md) | The permissions for this component. |  [optional]
 **bulletins** | [**List&lt;BulletinEntity&gt;**](BulletinEntity.md) | The bulletins for this component. |  [optional]
-**generated** | **String** | When this content was generated. |  [optional]
+**generated** | [**DateTime**](DateTime.md) |  |  [optional]
 **component** | [**AccessPolicyDTO**](AccessPolicyDTO.md) |  |  [optional]
 
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **String** | The ID of the connection |  [optional]
 **groupId** | **String** | The ID of the Process Group that the connection belongs to |  [optional]
 **name** | **String** | The name of the connection |  [optional]
-**statsLastRefreshed** | **String** | The timestamp of when the stats were last refreshed |  [optional]
+**statsLastRefreshed** | [**DateTime**](DateTime.md) | The timestamp of when the stats were last refreshed |  [optional]
 **sourceId** | **String** | The ID of the source component |  [optional]
 **sourceName** | **String** | The name of the source component |  [optional]
 **destinationId** | **String** | The ID of the destination component |  [optional]

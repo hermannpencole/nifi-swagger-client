@@ -71,7 +71,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**CopySnippetRequestEntity**](CopySnippetRequestEntity.md)| The copy snippet request. |
+ **body** | [**CopySnippetRequestEntity**](CopySnippetRequestEntity.md)| The copy snippet request. | [optional]
 
 ### Return type
 
@@ -126,7 +126,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**ConnectionEntity**](ConnectionEntity.md)| The connection configuration details. |
+ **body** | [**ConnectionEntity**](ConnectionEntity.md)| The connection configuration details. | [optional]
 
 ### Return type
 
@@ -181,7 +181,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**ControllerServiceEntity**](ControllerServiceEntity.md)| The controller service configuration details. |
+ **body** | [**ControllerServiceEntity**](ControllerServiceEntity.md)| The controller service configuration details. | [optional]
 
 ### Return type
 
@@ -236,7 +236,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**FunnelEntity**](FunnelEntity.md)| The funnel configuration details. |
+ **body** | [**FunnelEntity**](FunnelEntity.md)| The funnel configuration details. | [optional]
 
 ### Return type
 
@@ -291,7 +291,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**PortEntity**](PortEntity.md)| The input port configuration details. |
+ **body** | [**PortEntity**](PortEntity.md)| The input port configuration details. | [optional]
 
 ### Return type
 
@@ -346,7 +346,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**LabelEntity**](LabelEntity.md)| The label configuration details. |
+ **body** | [**LabelEntity**](LabelEntity.md)| The label configuration details. | [optional]
 
 ### Return type
 
@@ -401,7 +401,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**PortEntity**](PortEntity.md)| The output port configuration. |
+ **body** | [**PortEntity**](PortEntity.md)| The output port configuration. | [optional]
 
 ### Return type
 
@@ -456,7 +456,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**ProcessGroupEntity**](ProcessGroupEntity.md)| The process group configuration details. |
+ **body** | [**ProcessGroupEntity**](ProcessGroupEntity.md)| The process group configuration details. | [optional]
 
 ### Return type
 
@@ -511,7 +511,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**ProcessorEntity**](ProcessorEntity.md)| The processor configuration details. |
+ **body** | [**ProcessorEntity**](ProcessorEntity.md)| The processor configuration details. | [optional]
 
 ### Return type
 
@@ -566,7 +566,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**RemoteProcessGroupEntity**](RemoteProcessGroupEntity.md)| The remote process group configuration details. |
+ **body** | [**RemoteProcessGroupEntity**](RemoteProcessGroupEntity.md)| The remote process group configuration details. | [optional]
 
 ### Return type
 
@@ -621,7 +621,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**CreateTemplateRequestEntity**](CreateTemplateRequestEntity.md)| The create template request. |
+ **body** | [**CreateTemplateRequestEntity**](CreateTemplateRequestEntity.md)| The create template request. | [optional]
 
 ### Return type
 
@@ -1206,7 +1206,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**InstantiateTemplateRequestEntity**](InstantiateTemplateRequestEntity.md)| The instantiate template request. |
+ **body** | [**InstantiateTemplateRequestEntity**](InstantiateTemplateRequestEntity.md)| The instantiate template request. | [optional]
 
 ### Return type
 
@@ -1246,8 +1246,8 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessGroupsApi apiInstance = new ProcessGroupsApi();
 String id = "id_example"; // String | The process group id.
-String version = "version_example"; // String | The revision is used to verify the client is working with the latest version of the flow.
-String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
+Object version = null; // Object | The revision is used to verify the client is working with the latest version of the flow.
+Object clientId = null; // Object | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 try {
     ProcessGroupEntity result = apiInstance.removeProcessGroup(id, version, clientId);
     System.out.println(result);
@@ -1262,8 +1262,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **version** | **String**| The revision is used to verify the client is working with the latest version of the flow. | [optional]
- **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **version** | [**Object**](.md)| The revision is used to verify the client is working with the latest version of the flow. | [optional]
+ **clientId** | [**Object**](.md)| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
 
 ### Return type
 
@@ -1318,7 +1318,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**ProcessGroupEntity**](ProcessGroupEntity.md)| The process group configuration details. |
+ **body** | [**ProcessGroupEntity**](ProcessGroupEntity.md)| The process group configuration details. | [optional]
 
 ### Return type
 

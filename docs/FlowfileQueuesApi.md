@@ -201,7 +201,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 FlowfileQueuesApi apiInstance = new FlowfileQueuesApi();
 String id = "id_example"; // String | The connection id.
 String flowfileUuid = "flowfileUuid_example"; // String | The flowfile uuid.
-String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
+Object clientId = null; // Object | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where the content exists if clustered.
 try {
     apiInstance.downloadFlowFileContent(id, flowfileUuid, clientId, clusterNodeId);
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The connection id. |
  **flowfileUuid** | **String**| The flowfile uuid. |
- **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **clientId** | [**Object**](.md)| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
  **clusterNodeId** | **String**| The id of the node where the content exists if clustered. | [optional]
 
 ### Return type

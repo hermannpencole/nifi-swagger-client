@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **bulletins** | [**List&lt;BulletinEntity&gt;**](BulletinEntity.md) | The bulletins for this component. |  [optional]
 **component** | [**ProcessGroupDTO**](ProcessGroupDTO.md) |  |  [optional]
 **status** | [**ProcessGroupStatusDTO**](ProcessGroupStatusDTO.md) | The status of the process group. |  [optional]
-**runningCount** | **Integer** | The number of running components in this process group. |  [optional]
+**runningCount** | **Integer** | The number of running componetns in this process group. |  [optional]
 **stoppedCount** | **Integer** | The number of stopped components in the process group. |  [optional]
 **invalidCount** | **Integer** | The number of invalid components in the process group. |  [optional]
 **disabledCount** | **Integer** | The number of disabled components in the process group. |  [optional]

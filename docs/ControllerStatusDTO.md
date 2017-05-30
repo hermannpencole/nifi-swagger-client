@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **activeThreadCount** | **Integer** | The number of active threads in the NiFi. |  [optional]
-**queued** | **String** | The number of flowfiles queued in the NiFi. |  [optional]
+**queued** | **String** | The number of flowfilew queued in the NiFi. |  [optional]
 **flowFilesQueued** | **Integer** | The number of FlowFiles queued across the entire flow |  [optional]
 **bytesQueued** | **Long** | The size of the FlowFiles queued across the entire flow |  [optional]
 **runningCount** | **Integer** | The number of running components in the NiFi. |  [optional]

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | The id for this drop request. |  [optional]
 **uri** | **String** | The URI for future requests to this drop request. |  [optional]
-**submissionTime** | **String** | The timestamp when the query was submitted. |  [optional]
-**lastUpdated** | **String** | The last time this drop request was updated. |  [optional]
+**submissionTime** | [**DateTime**](DateTime.md) | The timestamp when the query was submitted. |  [optional]
+**lastUpdated** | [**DateTime**](DateTime.md) | The last time this drop request was updated. |  [optional]
 **percentCompleted** | **Integer** | The current percent complete. |  [optional]
 **finished** | **Boolean** | Whether the query has finished. |  [optional]
 **failureReason** | **String** | The reason, if any, that this drop request failed. |  [optional]

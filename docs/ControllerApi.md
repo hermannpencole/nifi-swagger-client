@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ControllerServiceEntity**](ControllerServiceEntity.md)| The controller service configuration details. |
+ **body** | [**ControllerServiceEntity**](ControllerServiceEntity.md)| The controller service configuration details. | [optional]
 
 ### Return type
 
@@ -106,7 +106,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ReportingTaskEntity**](ReportingTaskEntity.md)| The reporting task configuration details. |
+ **body** | [**ReportingTaskEntity**](ReportingTaskEntity.md)| The reporting task configuration details. | [optional]
 
 ### Return type
 
@@ -145,7 +145,7 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ControllerApi apiInstance = new ControllerApi();
-String endDate = "endDate_example"; // String | Purge actions before this date/time.
+Object endDate = null; // Object | Purge actions before this date/time.
 try {
     HistoryEntity result = apiInstance.deleteHistory(endDate);
     System.out.println(result);
@@ -159,7 +159,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **endDate** | **String**| Purge actions before this date/time. |
+ **endDate** | [**Object**](.md)| Purge actions before this date/time. | [optional]
 
 ### Return type
 
@@ -416,7 +416,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ControllerConfigurationEntity**](ControllerConfigurationEntity.md)| The controller configuration. |
+ **body** | [**ControllerConfigurationEntity**](ControllerConfigurationEntity.md)| The controller configuration. | [optional]
 
 ### Return type
 
@@ -471,7 +471,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The node id. |
- **body** | [**NodeEntity**](NodeEntity.md)| The node configuration. The only configuration that will be honored at this endpoint is the status or primary flag. |
+ **body** | [**NodeEntity**](NodeEntity.md)| The node configuration. The only configuration that will be honored at this endpoint is the status or primary flag. | [optional]
 
 ### Return type
 

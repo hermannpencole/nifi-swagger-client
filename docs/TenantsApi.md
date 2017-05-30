@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**getUsers**](TenantsApi.md#getUsers) | **GET** /tenants/users | Gets all users
 [**removeUser**](TenantsApi.md#removeUser) | **DELETE** /tenants/users/{id} | Deletes a user
 [**removeUserGroup**](TenantsApi.md#removeUserGroup) | **DELETE** /tenants/user-groups/{id} | Deletes a user group
-[**searchCluster**](TenantsApi.md#searchCluster) | **GET** /tenants/search-results | Searches for a tenant with the specified identity
+[**searchCluster**](TenantsApi.md#searchCluster) | **GET** /tenants/search-results | Searches the cluster for a node with the specified address
 [**updateUser**](TenantsApi.md#updateUser) | **PUT** /tenants/users/{id} | Updates a user
 [**updateUserGroup**](TenantsApi.md#updateUserGroup) | **PUT** /tenants/user-groups/{id} | Updates a user group
 
@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserEntity**](UserEntity.md)| The user configuration details. |
+ **body** | [**UserEntity**](UserEntity.md)| The user configuration details. | [optional]
 
 ### Return type
 
@@ -108,7 +108,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserGroupEntity**](UserGroupEntity.md)| The user group configuration details. |
+ **body** | [**UserGroupEntity**](UserGroupEntity.md)| The user group configuration details. | [optional]
 
 ### Return type
 
@@ -352,8 +352,8 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 TenantsApi apiInstance = new TenantsApi();
 String id = "id_example"; // String | The user id.
-String version = "version_example"; // String | The revision is used to verify the client is working with the latest version of the flow.
-String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
+Object version = null; // Object | The revision is used to verify the client is working with the latest version of the flow.
+Object clientId = null; // Object | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 try {
     UserEntity result = apiInstance.removeUser(id, version, clientId);
     System.out.println(result);
@@ -368,8 +368,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The user id. |
- **version** | **String**| The revision is used to verify the client is working with the latest version of the flow. | [optional]
- **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **version** | [**Object**](.md)| The revision is used to verify the client is working with the latest version of the flow. | [optional]
+ **clientId** | [**Object**](.md)| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
 
 ### Return type
 
@@ -409,8 +409,8 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 TenantsApi apiInstance = new TenantsApi();
 String id = "id_example"; // String | The user group id.
-String version = "version_example"; // String | The revision is used to verify the client is working with the latest version of the flow.
-String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
+Object version = null; // Object | The revision is used to verify the client is working with the latest version of the flow.
+Object clientId = null; // Object | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 try {
     UserGroupEntity result = apiInstance.removeUserGroup(id, version, clientId);
     System.out.println(result);
@@ -425,8 +425,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The user group id. |
- **version** | **String**| The revision is used to verify the client is working with the latest version of the flow. | [optional]
- **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **version** | [**Object**](.md)| The revision is used to verify the client is working with the latest version of the flow. | [optional]
+ **clientId** | [**Object**](.md)| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
 
 ### Return type
 
@@ -443,9 +443,9 @@ Name | Type | Description  | Notes
 
 <a name="searchCluster"></a>
 # **searchCluster**
-> TenantsEntity searchCluster(q)
+> ClusterSearchResultsEntity searchCluster(q)
 
-Searches for a tenant with the specified identity
+Searches the cluster for a node with the specified address
 
 Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
 
@@ -465,9 +465,9 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 TenantsApi apiInstance = new TenantsApi();
-String q = "q_example"; // String | Identity to search for.
+String q = "q_example"; // String | Node address to search for.
 try {
-    TenantsEntity result = apiInstance.searchCluster(q);
+    ClusterSearchResultsEntity result = apiInstance.searchCluster(q);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TenantsApi#searchCluster");
@@ -479,11 +479,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **q** | **String**| Identity to search for. |
+ **q** | **String**| Node address to search for. | [optional]
 
 ### Return type
 
-[**TenantsEntity**](TenantsEntity.md)
+[**ClusterSearchResultsEntity**](ClusterSearchResultsEntity.md)
 
 ### Authorization
 
@@ -534,7 +534,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The user id. |
- **body** | [**UserEntity**](UserEntity.md)| The user configuration details. |
+ **body** | [**UserEntity**](UserEntity.md)| The user configuration details. | [optional]
 
 ### Return type
 
@@ -589,7 +589,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The user group id. |
- **body** | [**UserGroupEntity**](UserGroupEntity.md)| The user group configuration details. |
+ **body** | [**UserGroupEntity**](UserGroupEntity.md)| The user group configuration details. | [optional]
 
 ### Return type
 

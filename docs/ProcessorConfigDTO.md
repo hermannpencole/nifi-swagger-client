@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **descriptors** | [**Map&lt;String, PropertyDescriptorDTO&gt;**](PropertyDescriptorDTO.md) | Descriptors for the processor&#39;s properties. |  [optional]
 **schedulingPeriod** | **String** | The frequency with which to schedule the processor. The format of the value will depend on th value of schedulingStrategy. |  [optional]
 **schedulingStrategy** | **String** | Indcates whether the prcessor should be scheduled to run in event or timer driven mode. |  [optional]
-**executionNode** | **String** | Indicates the node where the process will execute. |  [optional]
 **penaltyDuration** | **String** | The amout of time that is used when the process penalizes a flowfile. |  [optional]
 **yieldDuration** | **String** | The amount of time that must elapse before this processor is scheduled again after yielding. |  [optional]
 **bulletinLevel** | **String** | The level at which the processor will report bulletins. |  [optional]

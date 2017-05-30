@@ -29,8 +29,7 @@ Name | Type | Description | Notes
 **flowFileRepositoryStorageUsage** | [**StorageUsageDTO**](StorageUsageDTO.md) | The flowfile repository storage usage. |  [optional]
 **contentRepositoryStorageUsage** | [**List&lt;StorageUsageDTO&gt;**](StorageUsageDTO.md) | The content repository storage usage. |  [optional]
 **garbageCollection** | [**List&lt;GarbageCollectionDTO&gt;**](GarbageCollectionDTO.md) | The garbage collection details. |  [optional]
-**statsLastRefreshed** | **String** | When the diagnostics were generated. |  [optional]
-**versionInfo** | [**VersionInfoDTO**](VersionInfoDTO.md) | The nifi, os, java, and build version information |  [optional]
+**statsLastRefreshed** | [**DateTime**](DateTime.md) | When the diagnostics were generated. |  [optional]
 
 
 

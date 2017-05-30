@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **targetSecure** | **Boolean** | Whether the target is running securely. |  [optional]
 **name** | **String** | The name of the remote process group. |  [optional]
 **comments** | **String** | The comments for the remote process group. |  [optional]
-**communicationsTimeout** | **String** | The time period used for the timeout when communicating with the target. |  [optional]
+**communicationsTimeout** | **String** | The time period used for the timeout when commicating with the target. |  [optional]
 **yieldDuration** | **String** | When yielding, this amount of time must elapse before the remote process group is scheduled again. |  [optional]
 **transportProtocol** | **String** |  |  [optional]
 **proxyHost** | **String** |  |  [optional]
@@ -24,9 +24,9 @@ Name | Type | Description | Notes
 **outputPortCount** | **Integer** | The number of remote output ports currently available on the target. |  [optional]
 **activeRemoteInputPortCount** | **Integer** | The number of active remote input ports. |  [optional]
 **inactiveRemoteInputPortCount** | **Integer** | The number of inactive remote input ports. |  [optional]
-**activeRemoteOutputPortCount** | **Integer** | The number of active remote output ports. |  [optional]
+**activeRemoteOutputPortCount** | **Integer** | The number of acitve remote output ports. |  [optional]
 **inactiveRemoteOutputPortCount** | **Integer** | The number of inactive remote output ports. |  [optional]
-**flowRefreshed** | **String** | The timestamp when this remote process group was last refreshed. |  [optional]
+**flowRefreshed** | [**DateTime**](DateTime.md) | The timestamp when this remote process group was last refreshed. |  [optional]
 **contents** | [**RemoteProcessGroupContentsDTO**](RemoteProcessGroupContentsDTO.md) | The contents of the remote process group. Will contain available input/output ports. |  [optional]
 
 

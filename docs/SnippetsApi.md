@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SnippetEntity**](SnippetEntity.md)| The snippet configuration details. |
+ **body** | [**SnippetEntity**](SnippetEntity.md)| The snippet configuration details. | [optional]
 
 ### Return type
 
@@ -155,7 +155,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The snippet id. |
- **body** | [**SnippetEntity**](SnippetEntity.md)| The snippet configuration details. |
+ **body** | [**SnippetEntity**](SnippetEntity.md)| The snippet configuration details. | [optional]
 
 ### Return type
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**getBanners**](FlowApi.md#getBanners) | **GET** /flow/banners | Retrieves the banners for this NiFi
 [**getBulletinBoard**](FlowApi.md#getBulletinBoard) | **GET** /flow/bulletin-board | Gets current bulletins
 [**getBulletins**](FlowApi.md#getBulletins) | **GET** /flow/controller/bulletins | Retrieves Controller level bulletins
-[**getClusterSummary**](FlowApi.md#getClusterSummary) | **GET** /flow/cluster/summary | The cluster summary for this NiFi
+[**getClusterSummary**](FlowApi.md#getClusterSummary) | **GET** /flow/cluster/summary | Gets the current status of this NiFi
 [**getComponentHistory**](FlowApi.md#getComponentHistory) | **GET** /flow/history/components/{componentId} | Gets configuration history for a component
 [**getConnectionStatus**](FlowApi.md#getConnectionStatus) | **GET** /flow/connections/{id}/status | Gets status for a connection
 [**getConnectionStatusHistory**](FlowApi.md#getConnectionStatusHistory) | **GET** /flow/connections/{id}/status/history | Gets the status history for a connection
@@ -162,7 +162,7 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
-String id = "id_example"; // String | The action id.
+Object id = null; // Object | The action id.
 try {
     ActionEntity result = apiInstance.getAction(id);
     System.out.println(result);
@@ -176,7 +176,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| The action id. |
+ **id** | [**Object**](.md)| The action id. |
 
 ### Return type
 
@@ -264,12 +264,12 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
-String after = "after_example"; // String | Includes bulletins with an id after this value.
-String sourceName = "sourceName_example"; // String | Includes bulletins originating from this sources whose name match this regular expression.
-String message = "message_example"; // String | Includes bulletins whose message that match this regular expression.
-String sourceId = "sourceId_example"; // String | Includes bulletins originating from this sources whose id match this regular expression.
-String groupId = "groupId_example"; // String | Includes bulletins originating from this sources whose group id match this regular expression.
-String limit = "limit_example"; // String | The number of bulletins to limit the response to.
+Object after = null; // Object | Includes bulletins with an id after this value.
+Object sourceName = null; // Object | Includes bulletins originating from this sources whose name match this regular expression.
+Object message = null; // Object | Includes bulletins whose message that match this regular expression.
+Object sourceId = null; // Object | Includes bulletins originating from this sources whose id match this regular expression.
+Object groupId = null; // Object | Includes bulletins originating from this sources whose group id match this regular expression.
+Object limit = null; // Object | The number of bulletins to limit the response to.
 try {
     BulletinBoardEntity result = apiInstance.getBulletinBoard(after, sourceName, message, sourceId, groupId, limit);
     System.out.println(result);
@@ -283,12 +283,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **after** | **String**| Includes bulletins with an id after this value. | [optional]
- **sourceName** | **String**| Includes bulletins originating from this sources whose name match this regular expression. | [optional]
- **message** | **String**| Includes bulletins whose message that match this regular expression. | [optional]
- **sourceId** | **String**| Includes bulletins originating from this sources whose id match this regular expression. | [optional]
- **groupId** | **String**| Includes bulletins originating from this sources whose group id match this regular expression. | [optional]
- **limit** | **String**| The number of bulletins to limit the response to. | [optional]
+ **after** | [**Object**](.md)| Includes bulletins with an id after this value. | [optional]
+ **sourceName** | [**Object**](.md)| Includes bulletins originating from this sources whose name match this regular expression. | [optional]
+ **message** | [**Object**](.md)| Includes bulletins whose message that match this regular expression. | [optional]
+ **sourceId** | [**Object**](.md)| Includes bulletins originating from this sources whose id match this regular expression. | [optional]
+ **groupId** | [**Object**](.md)| Includes bulletins originating from this sources whose group id match this regular expression. | [optional]
+ **limit** | [**Object**](.md)| The number of bulletins to limit the response to. | [optional]
 
 ### Return type
 
@@ -354,9 +354,9 @@ This endpoint does not need any parameter.
 
 <a name="getClusterSummary"></a>
 # **getClusterSummary**
-> ClusteSummaryEntity getClusterSummary()
+> ControllerStatusEntity getClusterSummary()
 
-The cluster summary for this NiFi
+Gets the current status of this NiFi
 
 
 
@@ -377,7 +377,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
 try {
-    ClusteSummaryEntity result = apiInstance.getClusterSummary();
+    ControllerStatusEntity result = apiInstance.getClusterSummary();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowApi#getClusterSummary");
@@ -390,7 +390,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ClusteSummaryEntity**](ClusteSummaryEntity.md)
+[**ControllerStatusEntity**](ControllerStatusEntity.md)
 
 ### Authorization
 
@@ -1634,12 +1634,12 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
-String offset = "offset_example"; // String | The offset into the result set.
-String count = "count_example"; // String | The number of actions to return.
+Object offset = null; // Object | The offset into the result set.
+Object count = null; // Object | The number of actions to return.
 String sortColumn = "sortColumn_example"; // String | The field to sort on.
 String sortOrder = "sortOrder_example"; // String | The direction to sort.
-String startDate = "startDate_example"; // String | Include actions after this date.
-String endDate = "endDate_example"; // String | Include actions before this date.
+Object startDate = null; // Object | Include actions after this date.
+Object endDate = null; // Object | Include actions before this date.
 String userIdentity = "userIdentity_example"; // String | Include actions performed by this user.
 String sourceId = "sourceId_example"; // String | Include actions on this component.
 try {
@@ -1655,12 +1655,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **String**| The offset into the result set. |
- **count** | **String**| The number of actions to return. |
+ **offset** | [**Object**](.md)| The offset into the result set. | [optional]
+ **count** | [**Object**](.md)| The number of actions to return. | [optional]
  **sortColumn** | **String**| The field to sort on. | [optional]
  **sortOrder** | **String**| The direction to sort. | [optional]
- **startDate** | **String**| Include actions after this date. | [optional]
- **endDate** | **String**| Include actions before this date. | [optional]
+ **startDate** | [**Object**](.md)| Include actions after this date. | [optional]
+ **endDate** | [**Object**](.md)| Include actions before this date. | [optional]
  **userIdentity** | **String**| Include actions performed by this user. | [optional]
  **sourceId** | **String**| Include actions on this component. | [optional]
 
@@ -1717,7 +1717,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **body** | [**ScheduleComponentsEntity**](ScheduleComponentsEntity.md)| The request to schedule or unschedule. If the comopnents in the request are not specified, all authorized components will be considered. |
+ **body** | [**ScheduleComponentsEntity**](ScheduleComponentsEntity.md)| The request to schedule or unschedule. If the comopnents in the request are not specified, all authorized components will be considered. | [optional]
 
 ### Return type
 
@@ -1770,7 +1770,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **q** | **String**| Node address to search for. |
+ **q** | **String**| Node address to search for. | [optional]
 
 ### Return type
 

@@ -49,7 +49,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AccessPolicyEntity**](AccessPolicyEntity.md)| The access policy configuration details. |
+ **body** | [**AccessPolicyEntity**](AccessPolicyEntity.md)| The access policy configuration details. | [optional]
 
 ### Return type
 
@@ -197,8 +197,8 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 PoliciesApi apiInstance = new PoliciesApi();
 String id = "id_example"; // String | The access policy id.
-String version = "version_example"; // String | The revision is used to verify the client is working with the latest version of the flow.
-String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
+Object version = null; // Object | The revision is used to verify the client is working with the latest version of the flow.
+Object clientId = null; // Object | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 try {
     AccessPolicyEntity result = apiInstance.removeAccessPolicy(id, version, clientId);
     System.out.println(result);
@@ -213,8 +213,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The access policy id. |
- **version** | **String**| The revision is used to verify the client is working with the latest version of the flow. | [optional]
- **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **version** | [**Object**](.md)| The revision is used to verify the client is working with the latest version of the flow. | [optional]
+ **clientId** | [**Object**](.md)| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
 
 ### Return type
 
@@ -269,7 +269,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The access policy id. |
- **body** | [**AccessPolicyEntity**](AccessPolicyEntity.md)| The access policy configuration details. |
+ **body** | [**AccessPolicyEntity**](AccessPolicyEntity.md)| The access policy configuration details. | [optional]
 
 ### Return type
 

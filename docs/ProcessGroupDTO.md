@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **position** | [**PositionDTO**](PositionDTO.md) | The position of this component in the UI if applicable. |  [optional]
 **name** | **String** | The name of the process group. |  [optional]
 **comments** | **String** | The comments for the process group. |  [optional]
-**runningCount** | **Integer** | The number of running components in this process group. |  [optional]
+**runningCount** | **Integer** | The number of running componetns in this process group. |  [optional]
 **stoppedCount** | **Integer** | The number of stopped components in the process group. |  [optional]
 **invalidCount** | **Integer** | The number of invalid components in the process group. |  [optional]
 **disabledCount** | **Integer** | The number of disabled components in the process group. |  [optional]

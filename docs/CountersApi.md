@@ -87,7 +87,7 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 CountersApi apiInstance = new CountersApi();
-String id = "id_example"; // String | The id of the counter.
+String id = "id_example"; // String | 
 try {
     CounterEntity result = apiInstance.updateCounter(id);
     System.out.println(result);
@@ -101,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| The id of the counter. |
+ **id** | **String**|  |
 
 ### Return type
 

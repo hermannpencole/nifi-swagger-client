@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **output** | **String** | The output count/size for the process group in the last 5 minutes. |  [optional]
 **flowFilesTransferred** | **Integer** | The number of FlowFiles transferred in this ProcessGroup in the last 5 minutes |  [optional]
 **bytesTransferred** | **Long** | The number of bytes transferred in this ProcessGroup in the last 5 minutes |  [optional]
-**transferred** | **String** | The count/size transferred to/from queues in the process group in the last 5 minutes. |  [optional]
+**transferred** | **String** | The count/size transferred to/frome queues in the process group in the last 5 minutes. |  [optional]
 **bytesReceived** | **Long** | The number of bytes received from external sources by components within this ProcessGroup in the last 5 minutes |  [optional]
 **flowFilesReceived** | **Integer** | The number of FlowFiles received from external sources by components within this ProcessGroup in the last 5 minutes |  [optional]
 **received** | **String** | The count/size sent to the process group in the last 5 minutes. |  [optional]

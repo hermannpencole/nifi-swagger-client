@@ -22,8 +22,6 @@ Name | Type | Description | Notes
 **queued** | **String** | The total count and size of queued flowfiles formatted. |  [optional]
 **queuedSize** | **String** | The total size of flowfiles that are queued formatted. |  [optional]
 **queuedCount** | **String** | The number of flowfiles that are queued, pretty printed. |  [optional]
-**percentUseCount** | **Integer** | Connection percent use regarding queued flow files count and backpressure threshold if configured. |  [optional]
-**percentUseBytes** | **Integer** | Connection percent use regarding queued flow files size and backpressure threshold if configured. |  [optional]
 
 
 

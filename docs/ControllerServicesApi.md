@@ -213,7 +213,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The controller service id. |
- **propertyName** | **String**| The property name to return the descriptor for. |
+ **propertyName** | **String**| The property name to return the descriptor for. | [optional]
 
 ### Return type
 
@@ -306,8 +306,8 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ControllerServicesApi apiInstance = new ControllerServicesApi();
 String id = "id_example"; // String | The controller service id.
-String version = "version_example"; // String | The revision is used to verify the client is working with the latest version of the flow.
-String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
+Object version = null; // Object | The revision is used to verify the client is working with the latest version of the flow.
+Object clientId = null; // Object | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 try {
     ControllerServiceEntity result = apiInstance.removeControllerService(id, version, clientId);
     System.out.println(result);
@@ -322,8 +322,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The controller service id. |
- **version** | **String**| The revision is used to verify the client is working with the latest version of the flow. | [optional]
- **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+ **version** | [**Object**](.md)| The revision is used to verify the client is working with the latest version of the flow. | [optional]
+ **clientId** | [**Object**](.md)| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
 
 ### Return type
 
@@ -378,7 +378,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The controller service id. |
- **body** | [**ControllerServiceEntity**](ControllerServiceEntity.md)| The controller service configuration details. |
+ **body** | [**ControllerServiceEntity**](ControllerServiceEntity.md)| The controller service configuration details. | [optional]
 
 ### Return type
 
@@ -433,7 +433,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The controller service id. |
- **body** | [**UpdateControllerServiceReferenceRequestEntity**](UpdateControllerServiceReferenceRequestEntity.md)| The controller service request update request. |
+ **body** | [**UpdateControllerServiceReferenceRequestEntity**](UpdateControllerServiceReferenceRequestEntity.md)| The controller service request update request. | [optional]
 
 ### Return type
 

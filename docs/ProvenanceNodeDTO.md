@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **type** | [**TypeEnum**](#TypeEnum) | The type of the node. |  [optional]
 **eventType** | **String** | If the type is EVENT, this is the type of event. |  [optional]
 **millis** | **Long** | The timestamp of the node in milliseconds. |  [optional]
-**timestamp** | **String** | The timestamp of the node formatted. |  [optional]
+**timestamp** | [**DateTime**](DateTime.md) | The timestamp of the node formatted. |  [optional]
 
 
 <a name="TypeEnum"></a>

@@ -17,9 +17,8 @@ Name | Type | Description | Notes
 **supportsEventDriven** | **Boolean** | Whether the processor supports event driven scheduling. |  [optional]
 **supportsBatching** | **Boolean** | Whether the processor supports batching. This makes the run duration settings available. |  [optional]
 **persistsState** | **Boolean** | Whether the processor persists state. |  [optional]
-**restricted** | **Boolean** | Whether the processor requires elevated privileges. |  [optional]
 **inputRequirement** | **String** | The input requirement for this processor. |  [optional]
-**config** | [**ProcessorConfigDTO**](ProcessorConfigDTO.md) | The configuration details for the processor. These details will be included in a response if the verbose flag is included in a request. |  [optional]
+**config** | [**ProcessorConfigDTO**](ProcessorConfigDTO.md) | The configuration details for the processor. These details will be included in a resopnse if the verbose flag is included in a request. |  [optional]
 **validationErrors** | **List&lt;String&gt;** | The validation errors for the processor. These validation errors represent the problems with the processor that must be resolved before it can be started. |  [optional]
 
 

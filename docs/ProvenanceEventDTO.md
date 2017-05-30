@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | The event uuid. |  [optional]
 **eventId** | **Long** | The event id. This is a one up number thats unique per node. |  [optional]
-**eventTime** | **String** | The timestamp of the event. |  [optional]
+**eventTime** | [**DateTime**](DateTime.md) | The timestamp of the event. |  [optional]
 **eventDuration** | **Long** | The event duration in milliseconds. |  [optional]
 **lineageDuration** | **Long** | The duration since the lineage began, in milliseconds. |  [optional]
 **eventType** | **String** | The type of the event. |  [optional]

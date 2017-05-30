@@ -320,7 +320,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**LineageEntity**](LineageEntity.md)| The lineage query details. |
+ **body** | [**LineageEntity**](LineageEntity.md)| The lineage query details. | [optional]
 
 ### Return type
 
@@ -373,7 +373,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProvenanceEntity**](ProvenanceEntity.md)| The provenance query details. |
+ **body** | [**ProvenanceEntity**](ProvenanceEntity.md)| The provenance query details. | [optional]
 
 ### Return type
 

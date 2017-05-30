@@ -34,7 +34,7 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProvenanceEventsApi apiInstance = new ProvenanceEventsApi();
-String id = "id_example"; // String | The provenance event id.
+Object id = null; // Object | The provenance event id.
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where the content exists if clustered.
 try {
     apiInstance.getInputContent(id, clusterNodeId);
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| The provenance event id. |
+ **id** | [**Object**](.md)| The provenance event id. |
  **clusterNodeId** | **String**| The id of the node where the content exists if clustered. | [optional]
 
 ### Return type
@@ -88,7 +88,7 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProvenanceEventsApi apiInstance = new ProvenanceEventsApi();
-String id = "id_example"; // String | The provenance event id.
+Object id = null; // Object | The provenance event id.
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where the content exists if clustered.
 try {
     apiInstance.getOutputContent(id, clusterNodeId);
@@ -102,7 +102,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| The provenance event id. |
+ **id** | [**Object**](.md)| The provenance event id. |
  **clusterNodeId** | **String**| The id of the node where the content exists if clustered. | [optional]
 
 ### Return type
@@ -142,7 +142,7 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProvenanceEventsApi apiInstance = new ProvenanceEventsApi();
-String id = "id_example"; // String | The provenance event id.
+Object id = null; // Object | The provenance event id.
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where this event exists if clustered.
 try {
     ProvenanceEventEntity result = apiInstance.getProvenanceEvent(id, clusterNodeId);
@@ -157,7 +157,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| The provenance event id. |
+ **id** | [**Object**](.md)| The provenance event id. |
  **clusterNodeId** | **String**| The id of the node where this event exists if clustered. | [optional]
 
 ### Return type
@@ -211,7 +211,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SubmitReplayRequestEntity**](SubmitReplayRequestEntity.md)| The replay request. |
+ **body** | [**SubmitReplayRequestEntity**](SubmitReplayRequestEntity.md)| The replay request. | [optional]
 
 ### Return type
 
