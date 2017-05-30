@@ -4,7 +4,7 @@
   <artifactId>nifi-swagger-client</artifactId>
   <packaging>jar</packaging>
   <name>nifi-swagger-client</name>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <url>https://github.com/hermannpencole/nifi-swagger-client</url>
   <description>Client WebService on Swagger Java for Nifi</description>
  
