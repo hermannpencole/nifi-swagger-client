@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **processorLoadAverage** | **Double** | The processor load average if supported by the underlying system. |  [optional]
 **totalThreads** | **Integer** | Total number of threads. |  [optional]
 **daemonThreads** | **Integer** | Number of daemon threads. |  [optional]
+**uptime** | **String** | The uptime of the Java virtual machine |  [optional]
 **flowFileRepositoryStorageUsage** | [**StorageUsageDTO**](StorageUsageDTO.md) | The flowfile repository storage usage. |  [optional]
 **contentRepositoryStorageUsage** | [**List&lt;StorageUsageDTO&gt;**](StorageUsageDTO.md) | The content repository storage usage. |  [optional]
 **garbageCollection** | [**List&lt;GarbageCollectionDTO&gt;**](GarbageCollectionDTO.md) | The garbage collection details. |  [optional]

@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost/nifi-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createBulletin**](ControllerApi.md#createBulletin) | **POST** /controller/bulletin | Creates a new bulletin
 [**createControllerService**](ControllerApi.md#createControllerService) | **POST** /controller/controller-services | Creates a new controller service
 [**createReportingTask**](ControllerApi.md#createReportingTask) | **POST** /controller/reporting-tasks | Creates a new reporting task
 [**deleteHistory**](ControllerApi.md#deleteHistory) | **DELETE** /controller/history | Purges history
@@ -14,6 +15,59 @@ Method | HTTP request | Description
 [**updateControllerConfig**](ControllerApi.md#updateControllerConfig) | **PUT** /controller/config | Retrieves the configuration for this NiFi
 [**updateNode**](ControllerApi.md#updateNode) | **PUT** /controller/cluster/nodes/{id} | Updates a node in the cluster
 
+
+<a name="createBulletin"></a>
+# **createBulletin**
+> BulletinEntity createBulletin(body)
+
+Creates a new bulletin
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ControllerApi apiInstance = new ControllerApi();
+BulletinEntity body = new BulletinEntity(); // BulletinEntity | The reporting task configuration details.
+try {
+    BulletinEntity result = apiInstance.createBulletin(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ControllerApi#createBulletin");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**BulletinEntity**](BulletinEntity.md)| The reporting task configuration details. |
+
+### Return type
+
+[**BulletinEntity**](BulletinEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="createControllerService"></a>
 # **createControllerService**
@@ -456,7 +510,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ControllerApi apiInstance = new ControllerApi();
 String id = "id_example"; // String | The node id.
-NodeEntity body = new NodeEntity(); // NodeEntity | The node configuration. The only configuration that will be honored at this endpoint is the status or primary flag.
+NodeEntity body = new NodeEntity(); // NodeEntity | The node configuration. The only configuration that will be honored at this endpoint is the status.
 try {
     NodeEntity result = apiInstance.updateNode(id, body);
     System.out.println(result);
@@ -471,7 +525,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The node id. |
- **body** | [**NodeEntity**](NodeEntity.md)| The node configuration. The only configuration that will be honored at this endpoint is the status or primary flag. |
+ **body** | [**NodeEntity**](NodeEntity.md)| The node configuration. The only configuration that will be honored at this endpoint is the status. |
 
 ### Return type
 

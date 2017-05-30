@@ -13,7 +13,8 @@ Name | Type | Description | Notes
 **sensitive** | **Boolean** | Whether the property is sensitive and protected whenever stored or represented. |  [optional]
 **dynamic** | **Boolean** | Whether the property is dynamic (user-defined). |  [optional]
 **supportsEl** | **Boolean** | Whether the property supports expression language. |  [optional]
-**identifiesControllerService** | **String** | If the property identifies a controller service, this returns the fully qualified type. |  [optional]
+**identifiesControllerService** | **String** | If the property identifies a controller service this returns the fully qualified type. |  [optional]
+**identifiesControllerServiceBundle** | [**BundleDTO**](BundleDTO.md) | If the property identifies a controller service this returns the bundle of the type, null otherwise. |  [optional]
 
 
 

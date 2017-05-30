@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 <a name="getControllerServiceTypes"></a>
 # **getControllerServiceTypes**
-> ControllerServiceTypesEntity getControllerServiceTypes(serviceType)
+> ControllerServiceTypesEntity getControllerServiceTypes(serviceType, serviceBundleGroup, serviceBundleArtifact, serviceBundleVersion, bundleGroupFilter, bundleArtifactFilter, typeFilter)
 
 Retrieves the types of controller services that this NiFi supports
 
@@ -588,9 +588,15 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
-String serviceType = "serviceType_example"; // String | If specified, will only return controller services of this type.
+String serviceType = "serviceType_example"; // String | If specified, will only return controller services that are compatible with this type of service.
+String serviceBundleGroup = "serviceBundleGroup_example"; // String | If serviceType specified, is the bundle group of the serviceType.
+String serviceBundleArtifact = "serviceBundleArtifact_example"; // String | If serviceType specified, is the bundle artifact of the serviceType.
+String serviceBundleVersion = "serviceBundleVersion_example"; // String | If serviceType specified, is the bundle version of the serviceType.
+String bundleGroupFilter = "bundleGroupFilter_example"; // String | If specified, will only return types that are a member of this bundle group.
+String bundleArtifactFilter = "bundleArtifactFilter_example"; // String | If specified, will only return types that are a member of this bundle artifact.
+String typeFilter = "typeFilter_example"; // String | If specified, will only return types whose fully qualified classname matches.
 try {
-    ControllerServiceTypesEntity result = apiInstance.getControllerServiceTypes(serviceType);
+    ControllerServiceTypesEntity result = apiInstance.getControllerServiceTypes(serviceType, serviceBundleGroup, serviceBundleArtifact, serviceBundleVersion, bundleGroupFilter, bundleArtifactFilter, typeFilter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowApi#getControllerServiceTypes");
@@ -602,7 +608,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serviceType** | **String**| If specified, will only return controller services of this type. | [optional]
+ **serviceType** | **String**| If specified, will only return controller services that are compatible with this type of service. | [optional]
+ **serviceBundleGroup** | **String**| If serviceType specified, is the bundle group of the serviceType. | [optional]
+ **serviceBundleArtifact** | **String**| If serviceType specified, is the bundle artifact of the serviceType. | [optional]
+ **serviceBundleVersion** | **String**| If serviceType specified, is the bundle version of the serviceType. | [optional]
+ **bundleGroupFilter** | **String**| If specified, will only return types that are a member of this bundle group. | [optional]
+ **bundleArtifactFilter** | **String**| If specified, will only return types that are a member of this bundle artifact. | [optional]
+ **typeFilter** | **String**| If specified, will only return types whose fully qualified classname matches. | [optional]
 
 ### Return type
 
@@ -1306,7 +1318,7 @@ Name | Type | Description  | Notes
 
 <a name="getProcessorTypes"></a>
 # **getProcessorTypes**
-> ProcessorTypesEntity getProcessorTypes()
+> ProcessorTypesEntity getProcessorTypes(bundleGroupFilter, bundleArtifactFilter, type)
 
 Retrieves the types of processors that this NiFi supports
 
@@ -1328,8 +1340,11 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
+String bundleGroupFilter = "bundleGroupFilter_example"; // String | If specified, will only return types that are a member of this bundle group.
+String bundleArtifactFilter = "bundleArtifactFilter_example"; // String | If specified, will only return types that are a member of this bundle artifact.
+String type = "type_example"; // String | If specified, will only return types whose fully qualified classname matches.
 try {
-    ProcessorTypesEntity result = apiInstance.getProcessorTypes();
+    ProcessorTypesEntity result = apiInstance.getProcessorTypes(bundleGroupFilter, bundleArtifactFilter, type);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowApi#getProcessorTypes");
@@ -1338,7 +1353,12 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bundleGroupFilter** | **String**| If specified, will only return types that are a member of this bundle group. | [optional]
+ **bundleArtifactFilter** | **String**| If specified, will only return types that are a member of this bundle artifact. | [optional]
+ **type** | **String**| If specified, will only return types whose fully qualified classname matches. | [optional]
 
 ### Return type
 
@@ -1465,7 +1485,7 @@ Name | Type | Description  | Notes
 
 <a name="getReportingTaskTypes"></a>
 # **getReportingTaskTypes**
-> ReportingTaskTypesEntity getReportingTaskTypes()
+> ReportingTaskTypesEntity getReportingTaskTypes(bundleGroupFilter, bundleArtifactFilter, type)
 
 Retrieves the types of reporting tasks that this NiFi supports
 
@@ -1487,8 +1507,11 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
+String bundleGroupFilter = "bundleGroupFilter_example"; // String | If specified, will only return types that are a member of this bundle group.
+String bundleArtifactFilter = "bundleArtifactFilter_example"; // String | If specified, will only return types that are a member of this bundle artifact.
+String type = "type_example"; // String | If specified, will only return types whose fully qualified classname matches.
 try {
-    ReportingTaskTypesEntity result = apiInstance.getReportingTaskTypes();
+    ReportingTaskTypesEntity result = apiInstance.getReportingTaskTypes(bundleGroupFilter, bundleArtifactFilter, type);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowApi#getReportingTaskTypes");
@@ -1497,7 +1520,12 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bundleGroupFilter** | **String**| If specified, will only return types that are a member of this bundle group. | [optional]
+ **bundleArtifactFilter** | **String**| If specified, will only return types that are a member of this bundle artifact. | [optional]
+ **type** | **String**| If specified, will only return types whose fully qualified classname matches. | [optional]
 
 ### Return type
 

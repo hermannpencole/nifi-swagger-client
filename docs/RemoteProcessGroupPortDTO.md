@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **exists** | **Boolean** | Whether the target port exists. |  [optional]
 **targetRunning** | **Boolean** | Whether the target port is running. |  [optional]
 **connected** | **Boolean** | Whether the port has either an incoming or outgoing connection. |  [optional]
+**batchSettings** | [**BatchSettingsDTO**](BatchSettingsDTO.md) | The batch settings for data transmission. |  [optional]
 
 
 

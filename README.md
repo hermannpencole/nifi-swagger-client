@@ -25,7 +25,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.github.hermannpencole</groupId>
     <artifactId>nifi-swagger-client</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -35,7 +35,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```
-libraryDependencies += "com.github.hermannpencole" % "nifi-swagger-client" % "1.1.0"
+libraryDependencies += "com.github.hermannpencole" % "nifi-swagger-client" % "1.2.0"
 ```
 
 #### Gradle users
@@ -43,7 +43,7 @@ libraryDependencies += "com.github.hermannpencole" % "nifi-swagger-client" % "1.
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.github.hermannpencole:nifi-swagger-client:1.1.0"
+compile "com.github.hermannpencole:nifi-swagger-client:1.2.0"
 ```
 
 #### Others
@@ -52,13 +52,19 @@ Link for direct download if you don't use a dependency manager:
 
 - [http://central.maven.org/maven2/com/github/hermannpencole/nifi-swagger-client/](http://central.maven.org/maven2/com/github/hermannpencole/nifi-swagger-client/)
 
-### Release Notes
+### Which version 
 
 The version of product correspond to the nifi api version.
 
-1.1.0 is build with API Nifi 1.1.0
+sample 1.1.0 is build with API Nifi 1.1.0
 
+| version       | version NIFI               |
+| ------------- | -------------------------- |
+| version 1.0.X | Build with api nifi  1.0.0 |
+| version 1.1.X | Build with api nifi  1.1.0 |
+| version 1.2.X | Build with api nifi  1.2.0 |
 
+## 
 
 ## Getting Started
 
@@ -117,9 +123,7 @@ try {
 }
 ```
 
-### 
-
-## Documentation for API Endpoints
+### Documentation for API Endpoints
 
 All URIs are relative to *http://localhost/nifi-api*
 
@@ -134,6 +138,7 @@ All URIs are relative to *http://localhost/nifi-api*
 | *ConnectionsApi*         | [**deleteConnection**](docs/ConnectionsApi.md#deleteConnection) | **DELETE** /connections/{id}             | Deletes a connection                     |
 | *ConnectionsApi*         | [**getConnection**](docs/ConnectionsApi.md#getConnection) | **GET** /connections/{id}                | Gets a connection                        |
 | *ConnectionsApi*         | [**updateConnection**](docs/ConnectionsApi.md#updateConnection) | **PUT** /connections/{id}                | Updates a connection                     |
+| *ControllerApi*          | [**createBulletin**](docs/ControllerApi.md#createBulletin) | **POST** /controller/bulletin            | Creates a new bulletin                   |
 | *ControllerApi*          | [**createControllerService**](docs/ControllerApi.md#createControllerService) | **POST** /controller/controller-services | Creates a new controller service         |
 | *ControllerApi*          | [**createReportingTask**](docs/ControllerApi.md#createReportingTask) | **POST** /controller/reporting-tasks     | Creates a new reporting task             |
 | *ControllerApi*          | [**deleteHistory**](docs/ControllerApi.md#deleteHistory) | **DELETE** /controller/history           | Purges history                           |
@@ -219,7 +224,7 @@ All URIs are relative to *http://localhost/nifi-api*
 | *PoliciesApi*            | [**getAccessPolicyForResource**](docs/PoliciesApi.md#getAccessPolicyForResource) | **GET** /policies/{action}/{resource}    | Gets an access policy for the specified action and resource |
 | *PoliciesApi*            | [**removeAccessPolicy**](docs/PoliciesApi.md#removeAccessPolicy) | **DELETE** /policies/{id}                | Deletes an access policy                 |
 | *PoliciesApi*            | [**updateAccessPolicy**](docs/PoliciesApi.md#updateAccessPolicy) | **PUT** /policies/{id}                   | Updates a access policy                  |
-| *ProcessGroupsApi*       | [**copySnippet**](docs/ProcessGroupsApi.md#copySnippet) | **POST** /process-groups/{id}/snippet-instance | Copies a snippet                         |
+| *ProcessGroupsApi*       | [**copySnippet**](docs/ProcessGroupsApi.md#copySnippet) | **POST** /process-groups/{id}/snippet-instance | Copies a snippet and discards it.        |
 | *ProcessGroupsApi*       | [**createConnection**](docs/ProcessGroupsApi.md#createConnection) | **POST** /process-groups/{id}/connections | Creates a connection                     |
 | *ProcessGroupsApi*       | [**createControllerService**](docs/ProcessGroupsApi.md#createControllerService) | **POST** /process-groups/{id}/controller-services | Creates a new controller service         |
 | *ProcessGroupsApi*       | [**createFunnel**](docs/ProcessGroupsApi.md#createFunnel) | **POST** /process-groups/{id}/funnels    | Creates a funnel                         |
@@ -229,7 +234,7 @@ All URIs are relative to *http://localhost/nifi-api*
 | *ProcessGroupsApi*       | [**createProcessGroup**](docs/ProcessGroupsApi.md#createProcessGroup) | **POST** /process-groups/{id}/process-groups | Creates a process group                  |
 | *ProcessGroupsApi*       | [**createProcessor**](docs/ProcessGroupsApi.md#createProcessor) | **POST** /process-groups/{id}/processors | Creates a new processor                  |
 | *ProcessGroupsApi*       | [**createRemoteProcessGroup**](docs/ProcessGroupsApi.md#createRemoteProcessGroup) | **POST** /process-groups/{id}/remote-process-groups | Creates a new process group              |
-| *ProcessGroupsApi*       | [**createTemplate**](docs/ProcessGroupsApi.md#createTemplate) | **POST** /process-groups/{id}/templates  | Creates a template                       |
+| *ProcessGroupsApi*       | [**createTemplate**](docs/ProcessGroupsApi.md#createTemplate) | **POST** /process-groups/{id}/templates  | Creates a template and discards the specified snippet. |
 | *ProcessGroupsApi*       | [**getConnections**](docs/ProcessGroupsApi.md#getConnections) | **GET** /process-groups/{id}/connections | Gets all connections                     |
 | *ProcessGroupsApi*       | [**getFunnels**](docs/ProcessGroupsApi.md#getFunnels) | **GET** /process-groups/{id}/funnels     | Gets all funnels                         |
 | *ProcessGroupsApi*       | [**getInputPorts**](docs/ProcessGroupsApi.md#getInputPorts) | **GET** /process-groups/{id}/input-ports | Gets all input ports                     |
@@ -275,9 +280,9 @@ All URIs are relative to *http://localhost/nifi-api*
 | *ResourcesApi*           | [**getResources**](docs/ResourcesApi.md#getResources) | **GET** /resources                       | Gets the available resources that support access/authorization policies |
 | *SiteToSiteApi*          | [**getPeers**](docs/SiteToSiteApi.md#getPeers) | **GET** /site-to-site/peers              | Returns the available Peers and its status of this NiFi |
 | *SiteToSiteApi*          | [**getSiteToSiteDetails**](docs/SiteToSiteApi.md#getSiteToSiteDetails) | **GET** /site-to-site                    | Returns the details about this NiFi necessary to communicate via site to site |
-| *SnippetsApi*            | [**createSnippet**](docs/SnippetsApi.md#createSnippet) | **POST** /snippets                       | Creates a snippet                        |
-| *SnippetsApi*            | [**deleteSnippet**](docs/SnippetsApi.md#deleteSnippet) | **DELETE** /snippets/{id}                | Deletes the components in a snippet and drops the snippet |
-| *SnippetsApi*            | [**updateSnippet**](docs/SnippetsApi.md#updateSnippet) | **PUT** /snippets/{id}                   | Move&#39;s the components in this Snippet into a new Process Group and drops the snippet |
+| *SnippetsApi*            | [**createSnippet**](docs/SnippetsApi.md#createSnippet) | **POST** /snippets                       | Creates a snippet. The snippet will be automatically discarded if not used in a subsequent request after 1 minute. |
+| *SnippetsApi*            | [**deleteSnippet**](docs/SnippetsApi.md#deleteSnippet) | **DELETE** /snippets/{id}                | Deletes the components in a snippet and discards the snippet |
+| *SnippetsApi*            | [**updateSnippet**](docs/SnippetsApi.md#updateSnippet) | **PUT** /snippets/{id}                   | Move&#39;s the components in this Snippet into a new Process Group and discards the snippet |
 | *SystemDiagnosticsApi*   | [**getSystemDiagnostics**](docs/SystemDiagnosticsApi.md#getSystemDiagnostics) | **GET** /system-diagnostics              | Gets the diagnostics for the system NiFi is running on |
 | *TemplatesApi*           | [**exportTemplate**](docs/TemplatesApi.md#exportTemplate) | **GET** /templates/{id}/download         | Exports a template                       |
 | *TemplatesApi*           | [**removeTemplate**](docs/TemplatesApi.md#removeTemplate) | **DELETE** /templates/{id}               | Deletes a template                       |
@@ -293,210 +298,211 @@ All URIs are relative to *http://localhost/nifi-api*
 | *TenantsApi*             | [**updateUser**](docs/TenantsApi.md#updateUser) | **PUT** /tenants/users/{id}              | Updates a user                           |
 | *TenantsApi*             | [**updateUserGroup**](docs/TenantsApi.md#updateUserGroup) | **PUT** /tenants/user-groups/{id}        | Updates a user group                     |
 
-
 ## Documentation for Models
 
- - [AboutDTO](docs/AboutDTO.md)
- - [AboutEntity](docs/AboutEntity.md)
- - [AccessConfigurationDTO](docs/AccessConfigurationDTO.md)
- - [AccessConfigurationEntity](docs/AccessConfigurationEntity.md)
- - [AccessPolicyDTO](docs/AccessPolicyDTO.md)
- - [AccessPolicyEntity](docs/AccessPolicyEntity.md)
- - [AccessPolicySummaryDTO](docs/AccessPolicySummaryDTO.md)
- - [AccessPolicySummaryEntity](docs/AccessPolicySummaryEntity.md)
- - [AccessStatusDTO](docs/AccessStatusDTO.md)
- - [AccessStatusEntity](docs/AccessStatusEntity.md)
- - [ActionDTO](docs/ActionDTO.md)
- - [ActionDetailsDTO](docs/ActionDetailsDTO.md)
- - [ActionEntity](docs/ActionEntity.md)
- - [AllowableValueDTO](docs/AllowableValueDTO.md)
- - [AllowableValueEntity](docs/AllowableValueEntity.md)
- - [AttributeDTO](docs/AttributeDTO.md)
- - [BannerDTO](docs/BannerDTO.md)
- - [BannerEntity](docs/BannerEntity.md)
- - [BulletinBoardDTO](docs/BulletinBoardDTO.md)
- - [BulletinBoardEntity](docs/BulletinBoardEntity.md)
- - [BulletinDTO](docs/BulletinDTO.md)
- - [BulletinEntity](docs/BulletinEntity.md)
- - [ClusteSummaryEntity](docs/ClusteSummaryEntity.md)
- - [ClusterDTO](docs/ClusterDTO.md)
- - [ClusterEntity](docs/ClusterEntity.md)
- - [ClusterSearchResultsEntity](docs/ClusterSearchResultsEntity.md)
- - [ClusterSummaryDTO](docs/ClusterSummaryDTO.md)
- - [ComponentDetailsDTO](docs/ComponentDetailsDTO.md)
- - [ComponentHistoryDTO](docs/ComponentHistoryDTO.md)
- - [ComponentHistoryEntity](docs/ComponentHistoryEntity.md)
- - [ComponentReferenceDTO](docs/ComponentReferenceDTO.md)
- - [ComponentReferenceEntity](docs/ComponentReferenceEntity.md)
- - [ComponentSearchResultDTO](docs/ComponentSearchResultDTO.md)
- - [ComponentStateDTO](docs/ComponentStateDTO.md)
- - [ConnectableDTO](docs/ConnectableDTO.md)
- - [ConnectionDTO](docs/ConnectionDTO.md)
- - [ConnectionEntity](docs/ConnectionEntity.md)
- - [ConnectionStatusDTO](docs/ConnectionStatusDTO.md)
- - [ConnectionStatusEntity](docs/ConnectionStatusEntity.md)
- - [ConnectionStatusSnapshotDTO](docs/ConnectionStatusSnapshotDTO.md)
- - [ConnectionStatusSnapshotEntity](docs/ConnectionStatusSnapshotEntity.md)
- - [ConnectionsEntity](docs/ConnectionsEntity.md)
- - [ControllerBulletinsEntity](docs/ControllerBulletinsEntity.md)
- - [ControllerConfigurationDTO](docs/ControllerConfigurationDTO.md)
- - [ControllerConfigurationEntity](docs/ControllerConfigurationEntity.md)
- - [ControllerDTO](docs/ControllerDTO.md)
- - [ControllerEntity](docs/ControllerEntity.md)
- - [ControllerServiceDTO](docs/ControllerServiceDTO.md)
- - [ControllerServiceEntity](docs/ControllerServiceEntity.md)
- - [ControllerServiceReferencingComponentDTO](docs/ControllerServiceReferencingComponentDTO.md)
- - [ControllerServiceReferencingComponentEntity](docs/ControllerServiceReferencingComponentEntity.md)
- - [ControllerServiceReferencingComponentsEntity](docs/ControllerServiceReferencingComponentsEntity.md)
- - [ControllerServiceTypesEntity](docs/ControllerServiceTypesEntity.md)
- - [ControllerServicesEntity](docs/ControllerServicesEntity.md)
- - [ControllerStatusDTO](docs/ControllerStatusDTO.md)
- - [ControllerStatusEntity](docs/ControllerStatusEntity.md)
- - [CopySnippetRequestEntity](docs/CopySnippetRequestEntity.md)
- - [CounterDTO](docs/CounterDTO.md)
- - [CounterEntity](docs/CounterEntity.md)
- - [CountersDTO](docs/CountersDTO.md)
- - [CountersEntity](docs/CountersEntity.md)
- - [CountersSnapshotDTO](docs/CountersSnapshotDTO.md)
- - [CreateTemplateRequestEntity](docs/CreateTemplateRequestEntity.md)
- - [CurrentUserEntity](docs/CurrentUserEntity.md)
- - [DimensionsDTO](docs/DimensionsDTO.md)
- - [DocumentedTypeDTO](docs/DocumentedTypeDTO.md)
- - [DropRequestDTO](docs/DropRequestDTO.md)
- - [DropRequestEntity](docs/DropRequestEntity.md)
- - [FlowBreadcrumbDTO](docs/FlowBreadcrumbDTO.md)
- - [FlowBreadcrumbEntity](docs/FlowBreadcrumbEntity.md)
- - [FlowConfigurationDTO](docs/FlowConfigurationDTO.md)
- - [FlowConfigurationEntity](docs/FlowConfigurationEntity.md)
- - [FlowDTO](docs/FlowDTO.md)
- - [FlowEntity](docs/FlowEntity.md)
- - [FlowFileSummaryDTO](docs/FlowFileSummaryDTO.md)
- - [FlowSnippetDTO](docs/FlowSnippetDTO.md)
- - [FlowSnippetEntity](docs/FlowSnippetEntity.md)
- - [FunnelDTO](docs/FunnelDTO.md)
- - [FunnelEntity](docs/FunnelEntity.md)
- - [FunnelsEntity](docs/FunnelsEntity.md)
- - [GarbageCollectionDTO](docs/GarbageCollectionDTO.md)
- - [HistoryDTO](docs/HistoryDTO.md)
- - [HistoryEntity](docs/HistoryEntity.md)
- - [InputPortsEntity](docs/InputPortsEntity.md)
- - [InstantiateTemplateRequestEntity](docs/InstantiateTemplateRequestEntity.md)
- - [LabelDTO](docs/LabelDTO.md)
- - [LabelEntity](docs/LabelEntity.md)
- - [LabelsEntity](docs/LabelsEntity.md)
- - [LineageDTO](docs/LineageDTO.md)
- - [LineageEntity](docs/LineageEntity.md)
- - [LineageRequestDTO](docs/LineageRequestDTO.md)
- - [LineageResultsDTO](docs/LineageResultsDTO.md)
- - [ListingRequestDTO](docs/ListingRequestDTO.md)
- - [ListingRequestEntity](docs/ListingRequestEntity.md)
- - [NodeConnectionStatusSnapshotDTO](docs/NodeConnectionStatusSnapshotDTO.md)
- - [NodeCountersSnapshotDTO](docs/NodeCountersSnapshotDTO.md)
- - [NodeDTO](docs/NodeDTO.md)
- - [NodeEntity](docs/NodeEntity.md)
- - [NodeEventDTO](docs/NodeEventDTO.md)
- - [NodePortStatusSnapshotDTO](docs/NodePortStatusSnapshotDTO.md)
- - [NodeProcessGroupStatusSnapshotDTO](docs/NodeProcessGroupStatusSnapshotDTO.md)
- - [NodeProcessorStatusSnapshotDTO](docs/NodeProcessorStatusSnapshotDTO.md)
- - [NodeRemoteProcessGroupStatusSnapshotDTO](docs/NodeRemoteProcessGroupStatusSnapshotDTO.md)
- - [NodeSearchResultDTO](docs/NodeSearchResultDTO.md)
- - [NodeStatusSnapshotsDTO](docs/NodeStatusSnapshotsDTO.md)
- - [NodeSystemDiagnosticsSnapshotDTO](docs/NodeSystemDiagnosticsSnapshotDTO.md)
- - [OutputPortsEntity](docs/OutputPortsEntity.md)
- - [PeerDTO](docs/PeerDTO.md)
- - [PeersEntity](docs/PeersEntity.md)
- - [PermissionsDTO](docs/PermissionsDTO.md)
- - [PortDTO](docs/PortDTO.md)
- - [PortEntity](docs/PortEntity.md)
- - [PortStatusDTO](docs/PortStatusDTO.md)
- - [PortStatusEntity](docs/PortStatusEntity.md)
- - [PortStatusSnapshotDTO](docs/PortStatusSnapshotDTO.md)
- - [PortStatusSnapshotEntity](docs/PortStatusSnapshotEntity.md)
- - [PositionDTO](docs/PositionDTO.md)
- - [PreviousValueDTO](docs/PreviousValueDTO.md)
- - [PrioritizerTypesEntity](docs/PrioritizerTypesEntity.md)
- - [ProcessGroupDTO](docs/ProcessGroupDTO.md)
- - [ProcessGroupEntity](docs/ProcessGroupEntity.md)
- - [ProcessGroupFlowDTO](docs/ProcessGroupFlowDTO.md)
- - [ProcessGroupFlowEntity](docs/ProcessGroupFlowEntity.md)
- - [ProcessGroupStatusDTO](docs/ProcessGroupStatusDTO.md)
- - [ProcessGroupStatusEntity](docs/ProcessGroupStatusEntity.md)
- - [ProcessGroupStatusSnapshotDTO](docs/ProcessGroupStatusSnapshotDTO.md)
- - [ProcessGroupStatusSnapshotEntity](docs/ProcessGroupStatusSnapshotEntity.md)
- - [ProcessorConfigDTO](docs/ProcessorConfigDTO.md)
- - [ProcessorDTO](docs/ProcessorDTO.md)
- - [ProcessorEntity](docs/ProcessorEntity.md)
- - [ProcessorStatusDTO](docs/ProcessorStatusDTO.md)
- - [ProcessorStatusEntity](docs/ProcessorStatusEntity.md)
- - [ProcessorStatusSnapshotDTO](docs/ProcessorStatusSnapshotDTO.md)
- - [ProcessorStatusSnapshotEntity](docs/ProcessorStatusSnapshotEntity.md)
- - [ProcessorTypesEntity](docs/ProcessorTypesEntity.md)
- - [ProcessorsEntity](docs/ProcessorsEntity.md)
- - [PropertyDescriptorDTO](docs/PropertyDescriptorDTO.md)
- - [PropertyDescriptorEntity](docs/PropertyDescriptorEntity.md)
- - [PropertyHistoryDTO](docs/PropertyHistoryDTO.md)
- - [ProvenanceDTO](docs/ProvenanceDTO.md)
- - [ProvenanceEntity](docs/ProvenanceEntity.md)
- - [ProvenanceEventDTO](docs/ProvenanceEventDTO.md)
- - [ProvenanceEventEntity](docs/ProvenanceEventEntity.md)
- - [ProvenanceLinkDTO](docs/ProvenanceLinkDTO.md)
- - [ProvenanceNodeDTO](docs/ProvenanceNodeDTO.md)
- - [ProvenanceOptionsDTO](docs/ProvenanceOptionsDTO.md)
- - [ProvenanceOptionsEntity](docs/ProvenanceOptionsEntity.md)
- - [ProvenanceRequestDTO](docs/ProvenanceRequestDTO.md)
- - [ProvenanceResultsDTO](docs/ProvenanceResultsDTO.md)
- - [ProvenanceSearchableFieldDTO](docs/ProvenanceSearchableFieldDTO.md)
- - [QueueSizeDTO](docs/QueueSizeDTO.md)
- - [RelationshipDTO](docs/RelationshipDTO.md)
- - [RemoteProcessGroupContentsDTO](docs/RemoteProcessGroupContentsDTO.md)
- - [RemoteProcessGroupDTO](docs/RemoteProcessGroupDTO.md)
- - [RemoteProcessGroupEntity](docs/RemoteProcessGroupEntity.md)
- - [RemoteProcessGroupPortDTO](docs/RemoteProcessGroupPortDTO.md)
- - [RemoteProcessGroupPortEntity](docs/RemoteProcessGroupPortEntity.md)
- - [RemoteProcessGroupStatusDTO](docs/RemoteProcessGroupStatusDTO.md)
- - [RemoteProcessGroupStatusSnapshotDTO](docs/RemoteProcessGroupStatusSnapshotDTO.md)
- - [RemoteProcessGroupStatusSnapshotEntity](docs/RemoteProcessGroupStatusSnapshotEntity.md)
- - [RemoteProcessGroupsEntity](docs/RemoteProcessGroupsEntity.md)
- - [ReportingTaskDTO](docs/ReportingTaskDTO.md)
- - [ReportingTaskEntity](docs/ReportingTaskEntity.md)
- - [ReportingTaskTypesEntity](docs/ReportingTaskTypesEntity.md)
- - [ReportingTasksEntity](docs/ReportingTasksEntity.md)
- - [ResourceDTO](docs/ResourceDTO.md)
- - [ResourcesEntity](docs/ResourcesEntity.md)
- - [RevisionDTO](docs/RevisionDTO.md)
- - [ScheduleComponentsEntity](docs/ScheduleComponentsEntity.md)
- - [SearchResultsDTO](docs/SearchResultsDTO.md)
- - [SearchResultsEntity](docs/SearchResultsEntity.md)
- - [SnippetDTO](docs/SnippetDTO.md)
- - [SnippetEntity](docs/SnippetEntity.md)
- - [StateEntryDTO](docs/StateEntryDTO.md)
- - [StateMapDTO](docs/StateMapDTO.md)
- - [StatusDescriptorDTO](docs/StatusDescriptorDTO.md)
- - [StatusHistoryDTO](docs/StatusHistoryDTO.md)
- - [StatusHistoryEntity](docs/StatusHistoryEntity.md)
- - [StatusSnapshotDTO](docs/StatusSnapshotDTO.md)
- - [StorageUsageDTO](docs/StorageUsageDTO.md)
- - [StreamingOutput](docs/StreamingOutput.md)
- - [SubmitReplayRequestEntity](docs/SubmitReplayRequestEntity.md)
- - [SystemDiagnosticsDTO](docs/SystemDiagnosticsDTO.md)
- - [SystemDiagnosticsEntity](docs/SystemDiagnosticsEntity.md)
- - [SystemDiagnosticsSnapshotDTO](docs/SystemDiagnosticsSnapshotDTO.md)
- - [TemplateDTO](docs/TemplateDTO.md)
- - [TemplateEntity](docs/TemplateEntity.md)
- - [TemplatesEntity](docs/TemplatesEntity.md)
- - [TenantDTO](docs/TenantDTO.md)
- - [TenantEntity](docs/TenantEntity.md)
- - [TenantsEntity](docs/TenantsEntity.md)
- - [TransactionResultEntity](docs/TransactionResultEntity.md)
- - [UpdateControllerServiceReferenceRequestEntity](docs/UpdateControllerServiceReferenceRequestEntity.md)
- - [UserDTO](docs/UserDTO.md)
- - [UserEntity](docs/UserEntity.md)
- - [UserGroupDTO](docs/UserGroupDTO.md)
- - [UserGroupEntity](docs/UserGroupEntity.md)
- - [UserGroupsEntity](docs/UserGroupsEntity.md)
- - [UsersEntity](docs/UsersEntity.md)
- - [VersionInfoDTO](docs/VersionInfoDTO.md)
-
+- [AboutDTO](docs/AboutDTO.md)
+- [AboutEntity](docs/AboutEntity.md)
+- [AccessConfigurationDTO](docs/AccessConfigurationDTO.md)
+- [AccessConfigurationEntity](docs/AccessConfigurationEntity.md)
+- [AccessPolicyDTO](docs/AccessPolicyDTO.md)
+- [AccessPolicyEntity](docs/AccessPolicyEntity.md)
+- [AccessPolicySummaryDTO](docs/AccessPolicySummaryDTO.md)
+- [AccessPolicySummaryEntity](docs/AccessPolicySummaryEntity.md)
+- [AccessStatusDTO](docs/AccessStatusDTO.md)
+- [AccessStatusEntity](docs/AccessStatusEntity.md)
+- [ActionDTO](docs/ActionDTO.md)
+- [ActionDetailsDTO](docs/ActionDetailsDTO.md)
+- [ActionEntity](docs/ActionEntity.md)
+- [AllowableValueDTO](docs/AllowableValueDTO.md)
+- [AllowableValueEntity](docs/AllowableValueEntity.md)
+- [AttributeDTO](docs/AttributeDTO.md)
+- [BannerDTO](docs/BannerDTO.md)
+- [BannerEntity](docs/BannerEntity.md)
+- [BatchSettingsDTO](docs/BatchSettingsDTO.md)
+- [BulletinBoardDTO](docs/BulletinBoardDTO.md)
+- [BulletinBoardEntity](docs/BulletinBoardEntity.md)
+- [BulletinDTO](docs/BulletinDTO.md)
+- [BulletinEntity](docs/BulletinEntity.md)
+- [BundleDTO](docs/BundleDTO.md)
+- [ClusteSummaryEntity](docs/ClusteSummaryEntity.md)
+- [ClusterDTO](docs/ClusterDTO.md)
+- [ClusterEntity](docs/ClusterEntity.md)
+- [ClusterSearchResultsEntity](docs/ClusterSearchResultsEntity.md)
+- [ClusterSummaryDTO](docs/ClusterSummaryDTO.md)
+- [ComponentDetailsDTO](docs/ComponentDetailsDTO.md)
+- [ComponentHistoryDTO](docs/ComponentHistoryDTO.md)
+- [ComponentHistoryEntity](docs/ComponentHistoryEntity.md)
+- [ComponentReferenceDTO](docs/ComponentReferenceDTO.md)
+- [ComponentReferenceEntity](docs/ComponentReferenceEntity.md)
+- [ComponentSearchResultDTO](docs/ComponentSearchResultDTO.md)
+- [ComponentStateDTO](docs/ComponentStateDTO.md)
+- [ConnectableDTO](docs/ConnectableDTO.md)
+- [ConnectionDTO](docs/ConnectionDTO.md)
+- [ConnectionEntity](docs/ConnectionEntity.md)
+- [ConnectionStatusDTO](docs/ConnectionStatusDTO.md)
+- [ConnectionStatusEntity](docs/ConnectionStatusEntity.md)
+- [ConnectionStatusSnapshotDTO](docs/ConnectionStatusSnapshotDTO.md)
+- [ConnectionStatusSnapshotEntity](docs/ConnectionStatusSnapshotEntity.md)
+- [ConnectionsEntity](docs/ConnectionsEntity.md)
+- [ControllerBulletinsEntity](docs/ControllerBulletinsEntity.md)
+- [ControllerConfigurationDTO](docs/ControllerConfigurationDTO.md)
+- [ControllerConfigurationEntity](docs/ControllerConfigurationEntity.md)
+- [ControllerDTO](docs/ControllerDTO.md)
+- [ControllerEntity](docs/ControllerEntity.md)
+- [ControllerServiceApiDTO](docs/ControllerServiceApiDTO.md)
+- [ControllerServiceDTO](docs/ControllerServiceDTO.md)
+- [ControllerServiceEntity](docs/ControllerServiceEntity.md)
+- [ControllerServiceReferencingComponentDTO](docs/ControllerServiceReferencingComponentDTO.md)
+- [ControllerServiceReferencingComponentEntity](docs/ControllerServiceReferencingComponentEntity.md)
+- [ControllerServiceReferencingComponentsEntity](docs/ControllerServiceReferencingComponentsEntity.md)
+- [ControllerServiceTypesEntity](docs/ControllerServiceTypesEntity.md)
+- [ControllerServicesEntity](docs/ControllerServicesEntity.md)
+- [ControllerStatusDTO](docs/ControllerStatusDTO.md)
+- [ControllerStatusEntity](docs/ControllerStatusEntity.md)
+- [CopySnippetRequestEntity](docs/CopySnippetRequestEntity.md)
+- [CounterDTO](docs/CounterDTO.md)
+- [CounterEntity](docs/CounterEntity.md)
+- [CountersDTO](docs/CountersDTO.md)
+- [CountersEntity](docs/CountersEntity.md)
+- [CountersSnapshotDTO](docs/CountersSnapshotDTO.md)
+- [CreateTemplateRequestEntity](docs/CreateTemplateRequestEntity.md)
+- [CurrentUserEntity](docs/CurrentUserEntity.md)
+- [DimensionsDTO](docs/DimensionsDTO.md)
+- [DocumentedTypeDTO](docs/DocumentedTypeDTO.md)
+- [DropRequestDTO](docs/DropRequestDTO.md)
+- [DropRequestEntity](docs/DropRequestEntity.md)
+- [FlowBreadcrumbDTO](docs/FlowBreadcrumbDTO.md)
+- [FlowBreadcrumbEntity](docs/FlowBreadcrumbEntity.md)
+- [FlowConfigurationDTO](docs/FlowConfigurationDTO.md)
+- [FlowConfigurationEntity](docs/FlowConfigurationEntity.md)
+- [FlowDTO](docs/FlowDTO.md)
+- [FlowEntity](docs/FlowEntity.md)
+- [FlowFileSummaryDTO](docs/FlowFileSummaryDTO.md)
+- [FlowSnippetDTO](docs/FlowSnippetDTO.md)
+- [FlowSnippetEntity](docs/FlowSnippetEntity.md)
+- [FunnelDTO](docs/FunnelDTO.md)
+- [FunnelEntity](docs/FunnelEntity.md)
+- [FunnelsEntity](docs/FunnelsEntity.md)
+- [GarbageCollectionDTO](docs/GarbageCollectionDTO.md)
+- [HistoryDTO](docs/HistoryDTO.md)
+- [HistoryEntity](docs/HistoryEntity.md)
+- [InputPortsEntity](docs/InputPortsEntity.md)
+- [InstantiateTemplateRequestEntity](docs/InstantiateTemplateRequestEntity.md)
+- [LabelDTO](docs/LabelDTO.md)
+- [LabelEntity](docs/LabelEntity.md)
+- [LabelsEntity](docs/LabelsEntity.md)
+- [LineageDTO](docs/LineageDTO.md)
+- [LineageEntity](docs/LineageEntity.md)
+- [LineageRequestDTO](docs/LineageRequestDTO.md)
+- [LineageResultsDTO](docs/LineageResultsDTO.md)
+- [ListingRequestDTO](docs/ListingRequestDTO.md)
+- [ListingRequestEntity](docs/ListingRequestEntity.md)
+- [NodeConnectionStatusSnapshotDTO](docs/NodeConnectionStatusSnapshotDTO.md)
+- [NodeCountersSnapshotDTO](docs/NodeCountersSnapshotDTO.md)
+- [NodeDTO](docs/NodeDTO.md)
+- [NodeEntity](docs/NodeEntity.md)
+- [NodeEventDTO](docs/NodeEventDTO.md)
+- [NodePortStatusSnapshotDTO](docs/NodePortStatusSnapshotDTO.md)
+- [NodeProcessGroupStatusSnapshotDTO](docs/NodeProcessGroupStatusSnapshotDTO.md)
+- [NodeProcessorStatusSnapshotDTO](docs/NodeProcessorStatusSnapshotDTO.md)
+- [NodeRemoteProcessGroupStatusSnapshotDTO](docs/NodeRemoteProcessGroupStatusSnapshotDTO.md)
+- [NodeSearchResultDTO](docs/NodeSearchResultDTO.md)
+- [NodeStatusSnapshotsDTO](docs/NodeStatusSnapshotsDTO.md)
+- [NodeSystemDiagnosticsSnapshotDTO](docs/NodeSystemDiagnosticsSnapshotDTO.md)
+- [OutputPortsEntity](docs/OutputPortsEntity.md)
+- [PeerDTO](docs/PeerDTO.md)
+- [PeersEntity](docs/PeersEntity.md)
+- [PermissionsDTO](docs/PermissionsDTO.md)
+- [PortDTO](docs/PortDTO.md)
+- [PortEntity](docs/PortEntity.md)
+- [PortStatusDTO](docs/PortStatusDTO.md)
+- [PortStatusEntity](docs/PortStatusEntity.md)
+- [PortStatusSnapshotDTO](docs/PortStatusSnapshotDTO.md)
+- [PortStatusSnapshotEntity](docs/PortStatusSnapshotEntity.md)
+- [PositionDTO](docs/PositionDTO.md)
+- [PreviousValueDTO](docs/PreviousValueDTO.md)
+- [PrioritizerTypesEntity](docs/PrioritizerTypesEntity.md)
+- [ProcessGroupDTO](docs/ProcessGroupDTO.md)
+- [ProcessGroupEntity](docs/ProcessGroupEntity.md)
+- [ProcessGroupFlowDTO](docs/ProcessGroupFlowDTO.md)
+- [ProcessGroupFlowEntity](docs/ProcessGroupFlowEntity.md)
+- [ProcessGroupStatusDTO](docs/ProcessGroupStatusDTO.md)
+- [ProcessGroupStatusEntity](docs/ProcessGroupStatusEntity.md)
+- [ProcessGroupStatusSnapshotDTO](docs/ProcessGroupStatusSnapshotDTO.md)
+- [ProcessGroupStatusSnapshotEntity](docs/ProcessGroupStatusSnapshotEntity.md)
+- [ProcessorConfigDTO](docs/ProcessorConfigDTO.md)
+- [ProcessorDTO](docs/ProcessorDTO.md)
+- [ProcessorEntity](docs/ProcessorEntity.md)
+- [ProcessorStatusDTO](docs/ProcessorStatusDTO.md)
+- [ProcessorStatusEntity](docs/ProcessorStatusEntity.md)
+- [ProcessorStatusSnapshotDTO](docs/ProcessorStatusSnapshotDTO.md)
+- [ProcessorStatusSnapshotEntity](docs/ProcessorStatusSnapshotEntity.md)
+- [ProcessorTypesEntity](docs/ProcessorTypesEntity.md)
+- [ProcessorsEntity](docs/ProcessorsEntity.md)
+- [PropertyDescriptorDTO](docs/PropertyDescriptorDTO.md)
+- [PropertyDescriptorEntity](docs/PropertyDescriptorEntity.md)
+- [PropertyHistoryDTO](docs/PropertyHistoryDTO.md)
+- [ProvenanceDTO](docs/ProvenanceDTO.md)
+- [ProvenanceEntity](docs/ProvenanceEntity.md)
+- [ProvenanceEventDTO](docs/ProvenanceEventDTO.md)
+- [ProvenanceEventEntity](docs/ProvenanceEventEntity.md)
+- [ProvenanceLinkDTO](docs/ProvenanceLinkDTO.md)
+- [ProvenanceNodeDTO](docs/ProvenanceNodeDTO.md)
+- [ProvenanceOptionsDTO](docs/ProvenanceOptionsDTO.md)
+- [ProvenanceOptionsEntity](docs/ProvenanceOptionsEntity.md)
+- [ProvenanceRequestDTO](docs/ProvenanceRequestDTO.md)
+- [ProvenanceResultsDTO](docs/ProvenanceResultsDTO.md)
+- [ProvenanceSearchableFieldDTO](docs/ProvenanceSearchableFieldDTO.md)
+- [QueueSizeDTO](docs/QueueSizeDTO.md)
+- [RelationshipDTO](docs/RelationshipDTO.md)
+- [RemoteProcessGroupContentsDTO](docs/RemoteProcessGroupContentsDTO.md)
+- [RemoteProcessGroupDTO](docs/RemoteProcessGroupDTO.md)
+- [RemoteProcessGroupEntity](docs/RemoteProcessGroupEntity.md)
+- [RemoteProcessGroupPortDTO](docs/RemoteProcessGroupPortDTO.md)
+- [RemoteProcessGroupPortEntity](docs/RemoteProcessGroupPortEntity.md)
+- [RemoteProcessGroupStatusDTO](docs/RemoteProcessGroupStatusDTO.md)
+- [RemoteProcessGroupStatusSnapshotDTO](docs/RemoteProcessGroupStatusSnapshotDTO.md)
+- [RemoteProcessGroupStatusSnapshotEntity](docs/RemoteProcessGroupStatusSnapshotEntity.md)
+- [RemoteProcessGroupsEntity](docs/RemoteProcessGroupsEntity.md)
+- [ReportingTaskDTO](docs/ReportingTaskDTO.md)
+- [ReportingTaskEntity](docs/ReportingTaskEntity.md)
+- [ReportingTaskTypesEntity](docs/ReportingTaskTypesEntity.md)
+- [ReportingTasksEntity](docs/ReportingTasksEntity.md)
+- [ResourceDTO](docs/ResourceDTO.md)
+- [ResourcesEntity](docs/ResourcesEntity.md)
+- [RevisionDTO](docs/RevisionDTO.md)
+- [ScheduleComponentsEntity](docs/ScheduleComponentsEntity.md)
+- [SearchResultsDTO](docs/SearchResultsDTO.md)
+- [SearchResultsEntity](docs/SearchResultsEntity.md)
+- [SnippetDTO](docs/SnippetDTO.md)
+- [SnippetEntity](docs/SnippetEntity.md)
+- [StateEntryDTO](docs/StateEntryDTO.md)
+- [StateMapDTO](docs/StateMapDTO.md)
+- [StatusDescriptorDTO](docs/StatusDescriptorDTO.md)
+- [StatusHistoryDTO](docs/StatusHistoryDTO.md)
+- [StatusHistoryEntity](docs/StatusHistoryEntity.md)
+- [StatusSnapshotDTO](docs/StatusSnapshotDTO.md)
+- [StorageUsageDTO](docs/StorageUsageDTO.md)
+- [StreamingOutput](docs/StreamingOutput.md)
+- [SubmitReplayRequestEntity](docs/SubmitReplayRequestEntity.md)
+- [SystemDiagnosticsDTO](docs/SystemDiagnosticsDTO.md)
+- [SystemDiagnosticsEntity](docs/SystemDiagnosticsEntity.md)
+- [SystemDiagnosticsSnapshotDTO](docs/SystemDiagnosticsSnapshotDTO.md)
+- [TemplateDTO](docs/TemplateDTO.md)
+- [TemplateEntity](docs/TemplateEntity.md)
+- [TemplatesEntity](docs/TemplatesEntity.md)
+- [TenantDTO](docs/TenantDTO.md)
+- [TenantEntity](docs/TenantEntity.md)
+- [TenantsEntity](docs/TenantsEntity.md)
+- [TransactionResultEntity](docs/TransactionResultEntity.md)
+- [UpdateControllerServiceReferenceRequestEntity](docs/UpdateControllerServiceReferenceRequestEntity.md)
+- [UserDTO](docs/UserDTO.md)
+- [UserEntity](docs/UserEntity.md)
+- [UserGroupDTO](docs/UserGroupDTO.md)
+- [UserGroupEntity](docs/UserGroupEntity.md)
+- [UserGroupsEntity](docs/UserGroupsEntity.md)
+- [UsersEntity](docs/UsersEntity.md)
+- [VersionInfoDTO](docs/VersionInfoDTO.md)
 
 ## Documentation for Authorization
 
