@@ -15,6 +15,8 @@ package com.github.hermannpencole.nifi.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.github.hermannpencole.nifi.swagger.client.model.FlowSnippetDTO;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -24,6 +26,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+
+import javax.xml.bind.annotation.*;
 
 /**
  * TemplateDTO
@@ -49,6 +53,7 @@ public class TemplateDTO {
   private String timestamp = null;
 
   @SerializedName("encodingVersion")
+  @JacksonXmlProperty(localName = "encoding-version")
   private String encodingVersion = null;
 
   @SerializedName("snippet")

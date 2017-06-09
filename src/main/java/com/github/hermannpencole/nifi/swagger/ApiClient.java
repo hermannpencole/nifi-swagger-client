@@ -45,6 +45,20 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.TrustManagerFactory;
+import javax.net.ssl.X509TrustManager;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+
+import okio.BufferedSink;
+import okio.Okio;
+
 import com.github.hermannpencole.nifi.swagger.auth.Authentication;
 import com.github.hermannpencole.nifi.swagger.auth.HttpBasicAuth;
 import com.github.hermannpencole.nifi.swagger.auth.ApiKeyAuth;
@@ -605,6 +619,20 @@ public class ApiClient {
     }
 
     /**
+     * Check if the given MIME is a XML MIME.
+     * XML MIME examples:
+     *   application/xml
+     *   application/xml; charset=UTF8
+     *   APPLICATION/XML
+     *
+     * @param mime MIME (Multipurpose Internet Mail Extensions)
+     * @return True if the given MIME is XML, false otherwise.
+     */
+    public boolean isXmlMime(String mime) {
+        return mime != null && mime.matches("(?i)application\\/xml(;.*)?");
+    }
+
+    /**
      * Select the Accept header's value from the given accepts array:
      *   if JSON exists in the given array, use it;
      *   otherwise use all of them (joining into a string)
@@ -710,6 +738,9 @@ public class ApiClient {
         }
         if (isJsonMime(contentType)) {
             return json.deserialize(respBody, returnType);
+        } else if ((isXmlMime(contentType))) {
+            // Expecting string, return the raw response body.
+            return new XML().deserialize(respBody, returnType);
         } else if (returnType.equals(String.class)) {
             // Expecting string, return the raw response body.
             return (T) respBody;
@@ -1017,7 +1048,7 @@ public class ApiClient {
      */
     public String buildUrl(String path, List<Pair> queryParams, List<Pair> collectionQueryParams) {
         final StringBuilder url = new StringBuilder();
-        url.append(basePath).append(path);
+        url.append(basePath).append(path.replaceAll("%2F", "/"));
 
         if (queryParams != null && !queryParams.isEmpty()) {
             // support (constant) query string in `path`, e.g. "/posts?draft=1"

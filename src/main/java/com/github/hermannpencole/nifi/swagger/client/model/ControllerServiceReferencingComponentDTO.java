@@ -14,6 +14,7 @@
 package com.github.hermannpencole.nifi.swagger.client.model;
 
 import java.util.Objects;
+import com.github.hermannpencole.nifi.swagger.MapTypeAdapterFactory;
 import java.util.Arrays;
 import com.github.hermannpencole.nifi.swagger.client.model.ControllerServiceReferencingComponentEntity;
 import com.github.hermannpencole.nifi.swagger.client.model.PropertyDescriptorDTO;
@@ -51,6 +52,8 @@ public class ControllerServiceReferencingComponentDTO {
   private String state = null;
 
   @SerializedName("properties")
+  @JsonAdapter(MapTypeAdapterFactory.class)
+ 
   private Map<String, String> properties = null;
 
   @SerializedName("descriptors")

@@ -14,6 +14,8 @@
 package com.github.hermannpencole.nifi.swagger.client.model;
 
 import java.util.Objects;
+
+import com.github.hermannpencole.nifi.swagger.MapTypeAdapterFactory;
 import java.util.Arrays;
 import com.github.hermannpencole.nifi.swagger.client.model.PropertyDescriptorDTO;
 import com.google.gson.TypeAdapter;
@@ -35,6 +37,7 @@ import java.util.Map;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-03T16:29:45.931+01:00")
 public class ProcessorConfigDTO {
   @SerializedName("properties")
+  @JsonAdapter(MapTypeAdapterFactory.class)
   private Map<String, String> properties = null;
 
   @SerializedName("descriptors")

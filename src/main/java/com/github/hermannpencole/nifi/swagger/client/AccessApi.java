@@ -29,12 +29,37 @@ import java.io.IOException;
 
 import com.github.hermannpencole.nifi.swagger.client.model.AccessConfigurationEntity;
 import com.github.hermannpencole.nifi.swagger.client.model.AccessStatusEntity;
+import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthSchemeProvider;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.Credentials;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.config.AuthSchemes;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.config.Registry;
+import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.TrustStrategy;
+import org.apache.http.impl.auth.SPNegoSchemeFactory;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContextBuilder;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLContext;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.net.URISyntaxException;
+import java.security.*;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.*;
 
 public class AccessApi {
     private ApiClient apiClient;
@@ -244,8 +269,53 @@ public class AccessApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public String createAccessTokenFromTicket() throws ApiException {
-        ApiResponse<String> resp = createAccessTokenFromTicketWithHttpInfo();
-        return resp.getData();
+        /*ApiResponse<String> resp = createAccessTokenFromTicketWithHttpInfo();
+        return resp.getData();*/
+        try{
+            HttpPost request = new HttpPost(new URIBuilder(this.apiClient.getBasePath() + "/access/kerberos").build());
+            HttpClient httpClient = createSPNEGOHttpClient();
+            HttpResponse response = httpClient.execute(request);
+            if (response.getStatusLine().getStatusCode() >= 200 && response.getStatusLine().getStatusCode() < 300) {
+                return IOUtils.toString(response.getEntity().getContent(), "UTF-8");
+            } else {
+                throw new ApiException("Error reponse on url " + request.getURI().toString() + ", status " + response.getStatusLine().getStatusCode() + response.getEntity() != null ? " : " + IOUtils.toString(response.getEntity().getContent()):"");
+            }
+        } catch (GeneralSecurityException | URISyntaxException |IOException e) {
+            throw new ApiException(e);
+        }
+    }
+
+    private HttpClient createSPNEGOHttpClient()  throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        CredentialsProvider credsProvider = new BasicCredentialsProvider();
+        Credentials jaasCredentials = new Credentials() {
+            public String getPassword() {
+                return null;
+            }
+            public Principal getUserPrincipal() {
+                return null;
+            }
+        };
+        credsProvider.setCredentials(new AuthScope(null, -1, null), jaasCredentials);
+        Registry<AuthSchemeProvider> authSchemeRegistry = RegistryBuilder.<AuthSchemeProvider> create()
+                .register(AuthSchemes.SPNEGO,new SPNegoSchemeFactory(true, false))
+                .build();
+
+        RequestConfig config = RequestConfig.custom().setTargetPreferredAuthSchemes(Arrays.asList(AuthSchemes.SPNEGO, AuthSchemes.KERBEROS, AuthSchemes.NTLM)).build();
+
+        HttpClientBuilder httpClientBuilder = HttpClients.custom()
+                .setDefaultAuthSchemeRegistry(authSchemeRegistry)
+                .setDefaultCredentialsProvider(credsProvider)
+                .setDefaultRequestConfig(config);
+
+        if (!this.apiClient.isVerifyingSsl()) {
+            SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, (chain, authType) -> true).build();
+            HostnameVerifier hostnameVerifier = new NoopHostnameVerifier();
+            httpClientBuilder = httpClientBuilder
+                                    .setSSLContext(sslContext)
+                                    .setSSLHostnameVerifier(hostnameVerifier);
+        }
+
+        return httpClientBuilder.build();
     }
 
     /**
