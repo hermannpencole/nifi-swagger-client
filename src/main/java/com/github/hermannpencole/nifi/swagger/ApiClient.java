@@ -70,6 +70,8 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
 
 import okio.BufferedSink;
 import okio.Okio;
@@ -733,6 +735,20 @@ public class ApiClient {
     }
 
     /**
+     * Check if the given MIME is a XML MIME.
+     * XML MIME examples:
+     *   application/xml
+     *   application/xml; charset=UTF8
+     *   APPLICATION/XML
+     *
+     * @param mime MIME (Multipurpose Internet Mail Extensions)
+     * @return True if the given MIME is XML, false otherwise.
+     */
+    public boolean isXmlMime(String mime) {
+        return mime != null && mime.matches("(?i)application\\/xml(;.*)?");
+    }
+
+    /**
      * Select the Accept header's value from the given accepts array:
      *   if JSON exists in the given array, use it;
      *   otherwise use all of them (joining into a string)
@@ -838,6 +854,9 @@ public class ApiClient {
         }
         if (isJsonMime(contentType)) {
             return json.deserialize(respBody, returnType);
+        } else if ((isXmlMime(contentType))) {
+            // Expecting string, return the raw response body.
+            return new XML().deserialize(respBody, returnType);
         } else if (returnType.equals(String.class)) {
             // Expecting string, return the raw response body.
             return (T) respBody;
