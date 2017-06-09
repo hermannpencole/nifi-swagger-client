@@ -14,15 +14,19 @@
 package com.github.hermannpencole.nifi.swagger.client.model;
 
 import java.util.Objects;
+
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.github.hermannpencole.nifi.swagger.client.model.FlowSnippetDTO;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.xml.bind.annotation.*;
+
 /**
  * TemplateDTO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-24T23:49:37.943+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-09T12:21:23.789+02:00")
 public class TemplateDTO {
   @SerializedName("uri")
   private String uri = null;
@@ -43,6 +47,7 @@ public class TemplateDTO {
   private String timestamp = null;
 
   @SerializedName("encodingVersion")
+  @JacksonXmlProperty(localName = "encoding-version")
   private String encodingVersion = null;
 
   @SerializedName("snippet")
