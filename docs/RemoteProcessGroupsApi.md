@@ -22,11 +22,11 @@ Gets a remote process group
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.RemoteProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.RemoteProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -75,11 +75,11 @@ Deletes a remote process group
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.RemoteProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.RemoteProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -132,11 +132,11 @@ Updates a remote process group
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.RemoteProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.RemoteProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -187,11 +187,11 @@ Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.RemoteProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.RemoteProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -244,11 +244,11 @@ Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.RemoteProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.RemoteProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

@@ -19,11 +19,11 @@ Returns the available Peers and its status of this NiFi
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.SiteToSiteApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.SiteToSiteApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -68,11 +68,11 @@ Returns the details about this NiFi necessary to communicate via site to site
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.SiteToSiteApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.SiteToSiteApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

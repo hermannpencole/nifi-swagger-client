@@ -25,11 +25,11 @@ Clears the state for a controller service
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ControllerServicesApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerServicesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -78,11 +78,11 @@ Gets a controller service
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ControllerServicesApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerServicesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -131,11 +131,11 @@ Gets a controller service
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ControllerServicesApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerServicesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -184,11 +184,11 @@ Gets a controller service property descriptor
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ControllerServicesApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerServicesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -239,11 +239,11 @@ Gets the state for a controller service
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ControllerServicesApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerServicesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -292,11 +292,11 @@ Deletes a controller service
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ControllerServicesApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerServicesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -349,11 +349,11 @@ Updates a controller service
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ControllerServicesApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerServicesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -404,11 +404,11 @@ Updates a controller services references
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ControllerServicesApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerServicesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

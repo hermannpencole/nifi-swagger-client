@@ -24,11 +24,11 @@ Deletes a lineage query
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProvenanceApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProvenanceApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -79,11 +79,11 @@ Deletes a provenance query
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProvenanceApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProvenanceApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -134,11 +134,11 @@ Gets a lineage query
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProvenanceApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProvenanceApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -189,11 +189,11 @@ Gets a provenance query
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProvenanceApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProvenanceApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -244,11 +244,11 @@ Gets the searchable attributes for provenance events
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProvenanceApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProvenanceApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -293,11 +293,11 @@ Lineage queries may be long running so this endpoint submits a request. The resp
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProvenanceApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProvenanceApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -346,11 +346,11 @@ Provenance queries may be long running so this endpoint submits a request. The r
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProvenanceApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProvenanceApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

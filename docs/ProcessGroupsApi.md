@@ -42,11 +42,11 @@ Copies a snippet
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -97,11 +97,11 @@ Creates a connection
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -152,11 +152,11 @@ Creates a new controller service
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -207,11 +207,11 @@ Creates a funnel
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -262,11 +262,11 @@ Creates an input port
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -317,11 +317,11 @@ Creates a label
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -372,11 +372,11 @@ Creates an output port
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -427,11 +427,11 @@ Creates a process group
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -482,11 +482,11 @@ Creates a new processor
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -537,11 +537,11 @@ Creates a new process group
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -592,11 +592,11 @@ Creates a template
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -647,11 +647,11 @@ Gets all connections
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -700,11 +700,11 @@ Gets all funnels
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -753,11 +753,11 @@ Gets all input ports
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -806,11 +806,11 @@ Gets all labels
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -859,11 +859,11 @@ Gets all output ports
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -912,11 +912,11 @@ Gets a process group
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -965,11 +965,11 @@ Gets all process groups
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -1018,11 +1018,11 @@ Gets all processors
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -1071,11 +1071,11 @@ Gets all remote process groups
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -1124,11 +1124,11 @@ Imports a template
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -1177,11 +1177,11 @@ Instantiates a template
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -1232,11 +1232,11 @@ Deletes a process group
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -1289,11 +1289,11 @@ Updates a process group
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -1344,11 +1344,11 @@ Uploads a template
 ### Example
 ```java
 // Import classes:
-//import fr.hpencole.nifi.swagger.ApiClient;
-//import fr.hpencole.nifi.swagger.ApiException;
-//import fr.hpencole.nifi.swagger.Configuration;
-//import fr.hpencole.nifi.swagger.auth.*;
-//import fr.hpencole.nifi.swagger.client.ProcessGroupsApi;
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
