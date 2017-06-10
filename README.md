@@ -25,7 +25,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.github.hermannpencole</groupId>
     <artifactId>nifi-swagger-client</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.0.1</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -35,7 +35,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```
-libraryDependencies += "com.github.hermannpencole" % "nifi-swagger-client" % "1.2.0"
+libraryDependencies += "com.github.hermannpencole" % "nifi-swagger-client" % "1.2.0.1"
 ```
 
 #### Gradle users
@@ -43,7 +43,7 @@ libraryDependencies += "com.github.hermannpencole" % "nifi-swagger-client" % "1.
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.github.hermannpencole:nifi-swagger-client:1.2.0"
+compile "com.github.hermannpencole:nifi-swagger-client:1.2.0.1"
 ```
 
 #### Others
@@ -56,13 +56,13 @@ Link for direct download if you don't use a dependency manager:
 
 The version of product correspond to the nifi api version.
 
-sample 1.1.0 is build with API Nifi 1.1.0
+sample 1.1.0.1 is build with API Nifi 1.1.0
 
-| version       | version NIFI               |
-| ------------- | -------------------------- |
-| version 1.0.X | Build with api nifi  1.0.0 |
-| version 1.1.X | Build with api nifi  1.1.0 |
-| version 1.2.X | Build with api nifi  1.2.0 |
+| version         | version NIFI               |
+| --------------- | -------------------------- |
+| version 1.0.0.X | Build with api nifi  1.0.0 |
+| version 1.1.0.X | Build with api nifi  1.1.0 |
+| version 1.2.0.X | Build with api nifi  1.2.0 |
 
 ## 
 
