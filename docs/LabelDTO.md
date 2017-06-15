@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **label** | **String** | The text that appears in the label. |  [optional]
 **width** | **Double** | The width of the label in pixels when at a 1:1 scale. |  [optional]
 **height** | **Double** | The height of the label in pixels when at a 1:1 scale. |  [optional]
-**style** | **Map&lt;String, String&gt;** | The styles for this label (font-size &#x3D;&gt; 12px, background-color &#x3D;&gt; #eee, etc). |  [optional]
+**style** | **Map&lt;String, String&gt;** | The styles for this label (font-size : 12px, background-color : #eee, etc). |  [optional]
 
 
 

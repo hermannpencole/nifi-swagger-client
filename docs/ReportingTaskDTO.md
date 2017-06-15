@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **comments** | **String** | The comments of the reporting task. |  [optional]
 **persistsState** | **Boolean** | Whether the reporting task persists state. |  [optional]
 **restricted** | **Boolean** | Whether the reporting task requires elevated privileges. |  [optional]
+**deprecated** | **Boolean** | Whether the reporting task has been deprecated. |  [optional]
 **multipleVersionsAvailable** | **Boolean** | Whether the reporting task has multiple versions available. |  [optional]
 **schedulingPeriod** | **String** | The frequency with which to schedule the reporting task. The format of the value willd epend on the valud of the schedulingStrategy. |  [optional]
 **schedulingStrategy** | **String** | The scheduling strategy that determines how the schedulingPeriod value should be interpreted. |  [optional]

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **state** | [**StateEnum**](#StateEnum) | The state of the controller service. |  [optional]
 **persistsState** | **Boolean** | Whether the controller service persists state. |  [optional]
 **restricted** | **Boolean** | Whether the controller service requires elevated privileges. |  [optional]
+**deprecated** | **Boolean** | Whether the ontroller service has been deprecated. |  [optional]
 **multipleVersionsAvailable** | **Boolean** | Whether the controller service has multiple versions available. |  [optional]
 **properties** | **Map&lt;String, String&gt;** | The properties of the controller service. |  [optional]
 **descriptors** | [**Map&lt;String, PropertyDescriptorDTO&gt;**](PropertyDescriptorDTO.md) | The descriptors for the controller service properties. |  [optional]

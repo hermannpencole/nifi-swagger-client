@@ -63,6 +63,7 @@ sample 1.1.0.1 is build with API Nifi 1.1.0
 | version 1.0.0.X | Build with api nifi  1.0.0 |
 | version 1.1.0.X | Build with api nifi  1.1.0 |
 | version 1.2.0.X | Build with api nifi  1.2.0 |
+| version 1.3.0.X | Build with api nifi 1.3.0  |
 
 ## 
 
@@ -123,7 +124,7 @@ try {
 }
 ```
 
-### Documentation for API Endpoints
+## Documentation for API Endpoints
 
 All URIs are relative to *http://localhost/nifi-api*
 
