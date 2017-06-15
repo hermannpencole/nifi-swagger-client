@@ -28,7 +28,7 @@ public class XmlTest {
 
     @Test
     public void deserializeTest() throws ApiException, IOException {
-        String respValue="<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><templateEntity><template encoding-version=\"2.0\"><description>version 1.0</description><groupId>8c24bb5e-015c-1000-4644-5468bf01cb50</groupId><id>ebfccf01-50e9-45a4-b923-4452fe8143d5</id><name>my</name><timestamp>06/09/2017 14:56:25 CEST</timestamp><uri>http://localhost:8080/nifi-api/templates/ebfccf01-50e9-45a4-b923-4452fe8143d5</uri></template></templateEntity>";
+        String respValue="<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><templateEntity><template encoding-version=\"2.0\"><description>version 1.0</description><groupId>8c24bb5e-015c-1000-4644-5468bf01cb50</groupId><id>ebfccf01-50e9-45a4-b923-4452fe8143d5</id><name>my</name><uri>http://localhost:8080/nifi-api/templates/ebfccf01-50e9-45a4-b923-4452fe8143d5</uri></template></templateEntity>";
        TemplateEntity resp = new XML().deserialize(respValue, TemplateEntity.class);
        assert(resp != null);
        assert(resp.getTemplate() != null);
