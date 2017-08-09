@@ -14,10 +14,10 @@
 package com.github.hermannpencole.nifi.swagger.client.model;
 
 import java.util.Objects;
-import com.github.hermannpencole.nifi.swagger.client.model.PositionDTO;
-import com.github.hermannpencole.nifi.swagger.client.model.PropertyDescriptorDTO;
+
+import com.github.hermannpencole.nifi.swagger.MapTypeAdapterFactory;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -88,6 +88,7 @@ public class ReportingTaskDTO {
   private Map<String, String> defaultSchedulingPeriod = new HashMap<String, String>();
 
   @SerializedName("properties")
+  @JsonAdapter(MapTypeAdapterFactory.class)
   private Map<String, String> properties = new HashMap<String, String>();
 
   @SerializedName("descriptors")
