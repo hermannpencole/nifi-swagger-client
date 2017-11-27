@@ -346,7 +346,6 @@ public class ControllerApi {
             throw new ApiException("Missing the required parameter 'endDate' when calling deleteHistory(Async)");
         }
         
-        
         com.squareup.okhttp.Call call = deleteHistoryCall(endDate, progressListener, progressRequestListener);
         return call;
 
