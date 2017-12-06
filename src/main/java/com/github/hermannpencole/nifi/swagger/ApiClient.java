@@ -272,6 +272,11 @@ public class ApiClient {
         applySslSettings();
         return this;
     }
+    
+    public ApiClient setSslFactory(SSLSocketFactory factory) {
+    	httpClient.setSslSocketFactory(factory);
+    	return this;
+    }
 
     public DateFormat getDateFormat() {
         return dateFormat;
