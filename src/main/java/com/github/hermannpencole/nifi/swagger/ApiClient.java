@@ -13,43 +13,13 @@
 
 package com.github.hermannpencole.nifi.swagger;
 
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.MultipartBuilder;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.Headers;
-import com.squareup.okhttp.internal.http.HttpMethod;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
-
-import java.lang.reflect.Type;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import java.net.URLEncoder;
-import java.net.URLConnection;
-
 import java.io.File;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-
+import java.lang.reflect.Type;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.SecureRandom;
@@ -57,29 +27,51 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
-
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.KeyManager;
-import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
+
+import com.github.hermannpencole.nifi.swagger.auth.ApiKeyAuth;
+import com.github.hermannpencole.nifi.swagger.auth.Authentication;
+import com.github.hermannpencole.nifi.swagger.auth.HttpBasicAuth;
+import com.github.hermannpencole.nifi.swagger.auth.OAuth;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.Headers;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.MultipartBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+import com.squareup.okhttp.internal.http.HttpMethod;
+import com.squareup.okhttp.logging.HttpLoggingInterceptor;
+import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
 
 import okio.BufferedSink;
 import okio.Okio;
-
-import com.github.hermannpencole.nifi.swagger.auth.Authentication;
-import com.github.hermannpencole.nifi.swagger.auth.HttpBasicAuth;
-import com.github.hermannpencole.nifi.swagger.auth.ApiKeyAuth;
-import com.github.hermannpencole.nifi.swagger.auth.OAuth;
 
 public class ApiClient {
     public static final double JAVA_VERSION;
@@ -277,6 +269,11 @@ public class ApiClient {
     	httpClient.setSslSocketFactory(factory);
     	return this;
     }
+
+	public ApiClient setHostnameVerifier(HostnameVerifier hv) {
+		httpClient.setHostnameVerifier(hv);
+		return this;
+	}
 
     public DateFormat getDateFormat() {
         return dateFormat;
