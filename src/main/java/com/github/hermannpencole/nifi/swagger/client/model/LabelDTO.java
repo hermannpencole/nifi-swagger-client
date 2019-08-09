@@ -167,7 +167,7 @@ public class LabelDTO {
   }
 
    /**
-   * The styles for this label (font-size => 12px, background-color => #eee, etc).
+   * The styles for this label (font-size =&gt; 12px, background-color =&gt; #eee, etc).
    * @return style
   **/
   @ApiModelProperty(example = "null", value = "The styles for this label (font-size => 12px, background-color => #eee, etc).")

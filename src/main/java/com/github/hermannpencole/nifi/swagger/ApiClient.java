@@ -1172,7 +1172,7 @@ public class ApiClient {
      */
     public String buildUrl(String path, List<Pair> queryParams) {
         final StringBuilder url = new StringBuilder();
-        url.append(basePath).append(path);
+        url.append(basePath).append(path.replaceAll("%2F", "/"));
 
         if (queryParams != null && !queryParams.isEmpty()) {
             // support (constant) query string in `path`, e.g. "/posts?draft=1"

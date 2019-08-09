@@ -235,7 +235,7 @@
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-      <version>4.5.3</version>
+      <version>4.5.2</version>
     </dependency>
     <dependency>
       <groupId>commons-io</groupId>
@@ -251,7 +251,7 @@
     </dependency>
   </dependencies>
   <properties>
-    <java.version>1.7</java.version>
+    <java.version>1.8</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <swagger-core-version>1.5.12</swagger-core-version>
