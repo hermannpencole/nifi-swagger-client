@@ -19,5 +19,3 @@ hs_err_pid*
 target
 .gradle
 build
-/.idea
-/nifi-swagger-client.iml

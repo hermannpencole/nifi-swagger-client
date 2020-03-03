@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost/nifi-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSnippet**](SnippetsApi.md#createSnippet) | **POST** /snippets | Creates a snippet
-[**deleteSnippet**](SnippetsApi.md#deleteSnippet) | **DELETE** /snippets/{id} | Deletes the components in a snippet and drops the snippet
-[**updateSnippet**](SnippetsApi.md#updateSnippet) | **PUT** /snippets/{id} | Move&#39;s the components in this Snippet into a new Process Group and drops the snippet
+[**createSnippet**](SnippetsApi.md#createSnippet) | **POST** /snippets | Creates a snippet. The snippet will be automatically discarded if not used in a subsequent request after 1 minute.
+[**deleteSnippet**](SnippetsApi.md#deleteSnippet) | **DELETE** /snippets/{id} | Deletes the components in a snippet and discards the snippet
+[**updateSnippet**](SnippetsApi.md#updateSnippet) | **PUT** /snippets/{id} | Move&#39;s the components in this Snippet into a new Process Group and discards the snippet
 
 
 <a name="createSnippet"></a>
 # **createSnippet**
 > SnippetEntity createSnippet(body)
 
-Creates a snippet
+Creates a snippet. The snippet will be automatically discarded if not used in a subsequent request after 1 minute.
 
 
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 # **deleteSnippet**
 > SnippetEntity deleteSnippet(id)
 
-Deletes the components in a snippet and drops the snippet
+Deletes the components in a snippet and discards the snippet
 
 
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 # **updateSnippet**
 > SnippetEntity updateSnippet(id, body)
 
-Move&#39;s the components in this Snippet into a new Process Group and drops the snippet
+Move&#39;s the components in this Snippet into a new Process Group and discards the snippet
 
 
 

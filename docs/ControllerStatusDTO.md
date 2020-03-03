@@ -14,6 +14,11 @@ Name | Type | Description | Notes
 **disabledCount** | **Integer** | The number of disabled components in the NiFi. |  [optional]
 **activeRemotePortCount** | **Integer** | The number of active remote ports in the NiFi. |  [optional]
 **inactiveRemotePortCount** | **Integer** | The number of inactive remote ports in the NiFi. |  [optional]
+**upToDateCount** | **Integer** | The number of up to date versioned process groups in the NiFi. |  [optional]
+**locallyModifiedCount** | **Integer** | The number of locally modified versioned process groups in the NiFi. |  [optional]
+**staleCount** | **Integer** | The number of stale versioned process groups in the NiFi. |  [optional]
+**locallyModifiedAndStaleCount** | **Integer** | The number of locally modified and stale versioned process groups in the NiFi. |  [optional]
+**syncFailureCount** | **Integer** | The number of versioned process groups in the NiFi that are unable to sync to a registry. |  [optional]
 
 
 

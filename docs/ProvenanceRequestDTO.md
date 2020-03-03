@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **minimumFileSize** | **String** | The minimum file size to include in the query. |  [optional]
 **maximumFileSize** | **String** | The maximum file size to include in the query. |  [optional]
 **maxResults** | **Integer** | The maximum number of results to include. |  [optional]
+**summarize** | **Boolean** | Whether or not to summarize provenance events returned. This property is false by default. |  [optional]
+**incrementalResults** | **Boolean** | Whether or not incremental results are returned. If false, provenance events are only returned once the query completes. This property is true by default. |  [optional]
 
 
 

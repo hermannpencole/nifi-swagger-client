@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="exportTemplate"></a>
 # **exportTemplate**
-> TemplateDTO exportTemplate(id)
+> String exportTemplate(id)
 
 Exports a template
 
@@ -34,7 +34,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 TemplatesApi apiInstance = new TemplatesApi();
 String id = "id_example"; // String | The template id.
 try {
-    TemplateDTO result = apiInstance.exportTemplate(id);
+    String result = apiInstance.exportTemplate(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TemplatesApi#exportTemplate");
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TemplateDTO**](TemplateDTO.md)
+**String**
 
 ### Authorization
 

@@ -4,10 +4,12 @@ All URIs are relative to *http://localhost/nifi-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**activateControllerServices**](FlowApi.md#activateControllerServices) | **PUT** /flow/process-groups/{id}/controller-services | Enable or disable Controller Services in the specified Process Group.
 [**generateClientId**](FlowApi.md#generateClientId) | **GET** /flow/client-id | Generates a client id.
 [**getAboutInfo**](FlowApi.md#getAboutInfo) | **GET** /flow/about | Retrieves details about this NiFi to put in the About dialog
 [**getAction**](FlowApi.md#getAction) | **GET** /flow/history/{id} | Gets an action
 [**getBanners**](FlowApi.md#getBanners) | **GET** /flow/banners | Retrieves the banners for this NiFi
+[**getBuckets**](FlowApi.md#getBuckets) | **GET** /flow/registries/{id}/buckets | Gets the buckets from the specified registry for the current user
 [**getBulletinBoard**](FlowApi.md#getBulletinBoard) | **GET** /flow/bulletin-board | Gets current bulletins
 [**getBulletins**](FlowApi.md#getBulletins) | **GET** /flow/controller/bulletins | Retrieves Controller level bulletins
 [**getClusterSummary**](FlowApi.md#getClusterSummary) | **GET** /flow/cluster/summary | The cluster summary for this NiFi
@@ -21,6 +23,7 @@ Method | HTTP request | Description
 [**getCurrentUser**](FlowApi.md#getCurrentUser) | **GET** /flow/current-user | Retrieves the user identity of the user making the request
 [**getFlow**](FlowApi.md#getFlow) | **GET** /flow/process-groups/{id} | Gets a process group
 [**getFlowConfig**](FlowApi.md#getFlowConfig) | **GET** /flow/config | Retrieves the configuration for this NiFi flow
+[**getFlows**](FlowApi.md#getFlows) | **GET** /flow/registries/{registry-id}/buckets/{bucket-id}/flows | Gets the flows from the specified registry and bucket for the current user
 [**getInputPortStatus**](FlowApi.md#getInputPortStatus) | **GET** /flow/input-ports/{id}/status | Gets status for an input port
 [**getOutputPortStatus**](FlowApi.md#getOutputPortStatus) | **GET** /flow/output-ports/{id}/status | Gets status for an output port
 [**getPrioritizers**](FlowApi.md#getPrioritizers) | **GET** /flow/prioritizers | Retrieves the types of prioritizers that this NiFi supports
@@ -29,16 +32,73 @@ Method | HTTP request | Description
 [**getProcessorStatus**](FlowApi.md#getProcessorStatus) | **GET** /flow/processors/{id}/status | Gets status for a processor
 [**getProcessorStatusHistory**](FlowApi.md#getProcessorStatusHistory) | **GET** /flow/processors/{id}/status/history | Gets status history for a processor
 [**getProcessorTypes**](FlowApi.md#getProcessorTypes) | **GET** /flow/processor-types | Retrieves the types of processors that this NiFi supports
+[**getRegistries**](FlowApi.md#getRegistries) | **GET** /flow/registries | Gets the listing of available registries
 [**getRemoteProcessGroupStatus**](FlowApi.md#getRemoteProcessGroupStatus) | **GET** /flow/remote-process-groups/{id}/status | Gets status for a remote process group
 [**getRemoteProcessGroupStatusHistory**](FlowApi.md#getRemoteProcessGroupStatusHistory) | **GET** /flow/remote-process-groups/{id}/status/history | Gets the status history
 [**getReportingTaskTypes**](FlowApi.md#getReportingTaskTypes) | **GET** /flow/reporting-task-types | Retrieves the types of reporting tasks that this NiFi supports
 [**getReportingTasks**](FlowApi.md#getReportingTasks) | **GET** /flow/reporting-tasks | Gets all reporting tasks
 [**getTemplates**](FlowApi.md#getTemplates) | **GET** /flow/templates | Gets all templates
+[**getVersions**](FlowApi.md#getVersions) | **GET** /flow/registries/{registry-id}/buckets/{bucket-id}/flows/{flow-id}/versions | Gets the flow versions from the specified registry and bucket for the specified flow for the current user
 [**queryHistory**](FlowApi.md#queryHistory) | **GET** /flow/history | Gets configuration history
-[**scheduleComponents**](FlowApi.md#scheduleComponents) | **PUT** /flow/process-groups/{id} | Schedule or unschedule comopnents in the specified Process Group.
+[**scheduleComponents**](FlowApi.md#scheduleComponents) | **PUT** /flow/process-groups/{id} | Schedule or unschedule components in the specified Process Group.
 [**searchCluster**](FlowApi.md#searchCluster) | **GET** /flow/cluster/search-results | Searches the cluster for a node with the specified address
 [**searchFlow**](FlowApi.md#searchFlow) | **GET** /flow/search-results | Performs a search against this NiFi using the specified search term
 
+
+<a name="activateControllerServices"></a>
+# **activateControllerServices**
+> ActivateControllerServicesEntity activateControllerServices(id, body)
+
+Enable or disable Controller Services in the specified Process Group.
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.FlowApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+FlowApi apiInstance = new FlowApi();
+String id = "id_example"; // String | The process group id.
+ActivateControllerServicesEntity body = new ActivateControllerServicesEntity(); // ActivateControllerServicesEntity | The request to schedule or unschedule. If the comopnents in the request are not specified, all authorized components will be considered.
+try {
+    ActivateControllerServicesEntity result = apiInstance.activateControllerServices(id, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FlowApi#activateControllerServices");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The process group id. |
+ **body** | [**ActivateControllerServicesEntity**](ActivateControllerServicesEntity.md)| The request to schedule or unschedule. If the comopnents in the request are not specified, all authorized components will be considered. |
+
+### Return type
+
+[**ActivateControllerServicesEntity**](ActivateControllerServicesEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="generateClientId"></a>
 # **generateClientId**
@@ -230,6 +290,59 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**BannerEntity**](BannerEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+<a name="getBuckets"></a>
+# **getBuckets**
+> BucketsEntity getBuckets(id)
+
+Gets the buckets from the specified registry for the current user
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.FlowApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+FlowApi apiInstance = new FlowApi();
+String id = "id_example"; // String | The registry id.
+try {
+    BucketsEntity result = apiInstance.getBuckets(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FlowApi#getBuckets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The registry id. |
+
+### Return type
+
+[**BucketsEntity**](BucketsEntity.md)
 
 ### Authorization
 
@@ -479,7 +592,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
 String id = "id_example"; // String | The connection id.
-Boolean nodewise = true; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
+Boolean nodewise = false; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where to get the status.
 try {
     ConnectionStatusEntity result = apiInstance.getConnectionStatus(id, nodewise, clusterNodeId);
@@ -495,7 +608,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The connection id. |
- **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional]
+ **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional] [default to false]
  **clusterNodeId** | **String**| The id of the node where to get the status. | [optional]
 
 ### Return type
@@ -566,7 +679,7 @@ Name | Type | Description  | Notes
 
 <a name="getControllerServiceTypes"></a>
 # **getControllerServiceTypes**
-> ControllerServiceTypesEntity getControllerServiceTypes(serviceType)
+> ControllerServiceTypesEntity getControllerServiceTypes(serviceType, serviceBundleGroup, serviceBundleArtifact, serviceBundleVersion, bundleGroupFilter, bundleArtifactFilter, typeFilter)
 
 Retrieves the types of controller services that this NiFi supports
 
@@ -588,9 +701,15 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
-String serviceType = "serviceType_example"; // String | If specified, will only return controller services of this type.
+String serviceType = "serviceType_example"; // String | If specified, will only return controller services that are compatible with this type of service.
+String serviceBundleGroup = "serviceBundleGroup_example"; // String | If serviceType specified, is the bundle group of the serviceType.
+String serviceBundleArtifact = "serviceBundleArtifact_example"; // String | If serviceType specified, is the bundle artifact of the serviceType.
+String serviceBundleVersion = "serviceBundleVersion_example"; // String | If serviceType specified, is the bundle version of the serviceType.
+String bundleGroupFilter = "bundleGroupFilter_example"; // String | If specified, will only return types that are a member of this bundle group.
+String bundleArtifactFilter = "bundleArtifactFilter_example"; // String | If specified, will only return types that are a member of this bundle artifact.
+String typeFilter = "typeFilter_example"; // String | If specified, will only return types whose fully qualified classname matches.
 try {
-    ControllerServiceTypesEntity result = apiInstance.getControllerServiceTypes(serviceType);
+    ControllerServiceTypesEntity result = apiInstance.getControllerServiceTypes(serviceType, serviceBundleGroup, serviceBundleArtifact, serviceBundleVersion, bundleGroupFilter, bundleArtifactFilter, typeFilter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowApi#getControllerServiceTypes");
@@ -602,7 +721,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serviceType** | **String**| If specified, will only return controller services of this type. | [optional]
+ **serviceType** | **String**| If specified, will only return controller services that are compatible with this type of service. | [optional]
+ **serviceBundleGroup** | **String**| If serviceType specified, is the bundle group of the serviceType. | [optional]
+ **serviceBundleArtifact** | **String**| If serviceType specified, is the bundle artifact of the serviceType. | [optional]
+ **serviceBundleVersion** | **String**| If serviceType specified, is the bundle version of the serviceType. | [optional]
+ **bundleGroupFilter** | **String**| If specified, will only return types that are a member of this bundle group. | [optional]
+ **bundleArtifactFilter** | **String**| If specified, will only return types that are a member of this bundle artifact. | [optional]
+ **typeFilter** | **String**| If specified, will only return types whose fully qualified classname matches. | [optional]
 
 ### Return type
 
@@ -668,7 +793,7 @@ This endpoint does not need any parameter.
 
 <a name="getControllerServicesFromGroup"></a>
 # **getControllerServicesFromGroup**
-> ControllerServicesEntity getControllerServicesFromGroup(id)
+> ControllerServicesEntity getControllerServicesFromGroup(id, includeAncestorGroups, includeDescendantGroups)
 
 Gets all controller services
 
@@ -691,8 +816,10 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
 String id = "id_example"; // String | The process group id.
+Boolean includeAncestorGroups = true; // Boolean | Whether or not to include parent/ancestory process groups
+Boolean includeDescendantGroups = false; // Boolean | Whether or not to include descendant process groups
 try {
-    ControllerServicesEntity result = apiInstance.getControllerServicesFromGroup(id);
+    ControllerServicesEntity result = apiInstance.getControllerServicesFromGroup(id, includeAncestorGroups, includeDescendantGroups);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowApi#getControllerServicesFromGroup");
@@ -705,6 +832,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
+ **includeAncestorGroups** | **Boolean**| Whether or not to include parent/ancestory process groups | [optional] [default to true]
+ **includeDescendantGroups** | **Boolean**| Whether or not to include descendant process groups | [optional] [default to false]
 
 ### Return type
 
@@ -919,6 +1048,61 @@ This endpoint does not need any parameter.
  - **Content-Type**: */*
  - **Accept**: application/json
 
+<a name="getFlows"></a>
+# **getFlows**
+> BucketsEntity getFlows(registryId, bucketId)
+
+Gets the flows from the specified registry and bucket for the current user
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.FlowApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+FlowApi apiInstance = new FlowApi();
+String registryId = "registryId_example"; // String | The registry id.
+String bucketId = "bucketId_example"; // String | The bucket id.
+try {
+    BucketsEntity result = apiInstance.getFlows(registryId, bucketId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FlowApi#getFlows");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **registryId** | **String**| The registry id. |
+ **bucketId** | **String**| The bucket id. |
+
+### Return type
+
+[**BucketsEntity**](BucketsEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
 <a name="getInputPortStatus"></a>
 # **getInputPortStatus**
 > PortStatusEntity getInputPortStatus(id, nodewise, clusterNodeId)
@@ -944,7 +1128,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
 String id = "id_example"; // String | The input port id.
-Boolean nodewise = true; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
+Boolean nodewise = false; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where to get the status.
 try {
     PortStatusEntity result = apiInstance.getInputPortStatus(id, nodewise, clusterNodeId);
@@ -960,7 +1144,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The input port id. |
- **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional]
+ **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional] [default to false]
  **clusterNodeId** | **String**| The id of the node where to get the status. | [optional]
 
 ### Return type
@@ -1001,7 +1185,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
 String id = "id_example"; // String | The output port id.
-Boolean nodewise = true; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
+Boolean nodewise = false; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where to get the status.
 try {
     PortStatusEntity result = apiInstance.getOutputPortStatus(id, nodewise, clusterNodeId);
@@ -1017,7 +1201,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The output port id. |
- **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional]
+ **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional] [default to false]
  **clusterNodeId** | **String**| The id of the node where to get the status. | [optional]
 
 ### Return type
@@ -1107,8 +1291,8 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
 String id = "id_example"; // String | The process group id.
-Boolean recursive = true; // Boolean | Whether all descendant groups and the status of their content will be included. Optional, defaults to false
-Boolean nodewise = true; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
+Boolean recursive = false; // Boolean | Whether all descendant groups and the status of their content will be included. Optional, defaults to false
+Boolean nodewise = false; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where to get the status.
 try {
     ProcessGroupStatusEntity result = apiInstance.getProcessGroupStatus(id, recursive, nodewise, clusterNodeId);
@@ -1124,8 +1308,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **recursive** | **Boolean**| Whether all descendant groups and the status of their content will be included. Optional, defaults to false | [optional]
- **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional]
+ **recursive** | **Boolean**| Whether all descendant groups and the status of their content will be included. Optional, defaults to false | [optional] [default to false]
+ **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional] [default to false]
  **clusterNodeId** | **String**| The id of the node where to get the status. | [optional]
 
 ### Return type
@@ -1219,7 +1403,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
 String id = "id_example"; // String | The processor id.
-Boolean nodewise = true; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
+Boolean nodewise = false; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where to get the status.
 try {
     ProcessorStatusEntity result = apiInstance.getProcessorStatus(id, nodewise, clusterNodeId);
@@ -1235,7 +1419,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The processor id. |
- **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional]
+ **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional] [default to false]
  **clusterNodeId** | **String**| The id of the node where to get the status. | [optional]
 
 ### Return type
@@ -1306,7 +1490,7 @@ Name | Type | Description  | Notes
 
 <a name="getProcessorTypes"></a>
 # **getProcessorTypes**
-> ProcessorTypesEntity getProcessorTypes()
+> ProcessorTypesEntity getProcessorTypes(bundleGroupFilter, bundleArtifactFilter, type)
 
 Retrieves the types of processors that this NiFi supports
 
@@ -1328,8 +1512,11 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
+String bundleGroupFilter = "bundleGroupFilter_example"; // String | If specified, will only return types that are a member of this bundle group.
+String bundleArtifactFilter = "bundleArtifactFilter_example"; // String | If specified, will only return types that are a member of this bundle artifact.
+String type = "type_example"; // String | If specified, will only return types whose fully qualified classname matches.
 try {
-    ProcessorTypesEntity result = apiInstance.getProcessorTypes();
+    ProcessorTypesEntity result = apiInstance.getProcessorTypes(bundleGroupFilter, bundleArtifactFilter, type);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowApi#getProcessorTypes");
@@ -1338,7 +1525,12 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bundleGroupFilter** | **String**| If specified, will only return types that are a member of this bundle group. | [optional]
+ **bundleArtifactFilter** | **String**| If specified, will only return types that are a member of this bundle artifact. | [optional]
+ **type** | **String**| If specified, will only return types whose fully qualified classname matches. | [optional]
 
 ### Return type
 
@@ -1353,9 +1545,58 @@ This endpoint does not need any parameter.
  - **Content-Type**: */*
  - **Accept**: application/json
 
+<a name="getRegistries"></a>
+# **getRegistries**
+> RegistryClientsEntity getRegistries()
+
+Gets the listing of available registries
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.FlowApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+FlowApi apiInstance = new FlowApi();
+try {
+    RegistryClientsEntity result = apiInstance.getRegistries();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FlowApi#getRegistries");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**RegistryClientsEntity**](RegistryClientsEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
 <a name="getRemoteProcessGroupStatus"></a>
 # **getRemoteProcessGroupStatus**
-> ProcessorStatusEntity getRemoteProcessGroupStatus(id, nodewise, clusterNodeId)
+> RemoteProcessGroupStatusEntity getRemoteProcessGroupStatus(id, nodewise, clusterNodeId)
 
 Gets status for a remote process group
 
@@ -1378,10 +1619,10 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
 String id = "id_example"; // String | The remote process group id.
-Boolean nodewise = true; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
+Boolean nodewise = false; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where to get the status.
 try {
-    ProcessorStatusEntity result = apiInstance.getRemoteProcessGroupStatus(id, nodewise, clusterNodeId);
+    RemoteProcessGroupStatusEntity result = apiInstance.getRemoteProcessGroupStatus(id, nodewise, clusterNodeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowApi#getRemoteProcessGroupStatus");
@@ -1394,12 +1635,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The remote process group id. |
- **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional]
+ **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional] [default to false]
  **clusterNodeId** | **String**| The id of the node where to get the status. | [optional]
 
 ### Return type
 
-[**ProcessorStatusEntity**](ProcessorStatusEntity.md)
+[**RemoteProcessGroupStatusEntity**](RemoteProcessGroupStatusEntity.md)
 
 ### Authorization
 
@@ -1465,7 +1706,7 @@ Name | Type | Description  | Notes
 
 <a name="getReportingTaskTypes"></a>
 # **getReportingTaskTypes**
-> ReportingTaskTypesEntity getReportingTaskTypes()
+> ReportingTaskTypesEntity getReportingTaskTypes(bundleGroupFilter, bundleArtifactFilter, type)
 
 Retrieves the types of reporting tasks that this NiFi supports
 
@@ -1487,8 +1728,11 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 FlowApi apiInstance = new FlowApi();
+String bundleGroupFilter = "bundleGroupFilter_example"; // String | If specified, will only return types that are a member of this bundle group.
+String bundleArtifactFilter = "bundleArtifactFilter_example"; // String | If specified, will only return types that are a member of this bundle artifact.
+String type = "type_example"; // String | If specified, will only return types whose fully qualified classname matches.
 try {
-    ReportingTaskTypesEntity result = apiInstance.getReportingTaskTypes();
+    ReportingTaskTypesEntity result = apiInstance.getReportingTaskTypes(bundleGroupFilter, bundleArtifactFilter, type);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowApi#getReportingTaskTypes");
@@ -1497,7 +1741,12 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bundleGroupFilter** | **String**| If specified, will only return types that are a member of this bundle group. | [optional]
+ **bundleArtifactFilter** | **String**| If specified, will only return types that are a member of this bundle artifact. | [optional]
+ **type** | **String**| If specified, will only return types whose fully qualified classname matches. | [optional]
 
 ### Return type
 
@@ -1610,6 +1859,63 @@ This endpoint does not need any parameter.
  - **Content-Type**: */*
  - **Accept**: application/json
 
+<a name="getVersions"></a>
+# **getVersions**
+> BucketsEntity getVersions(registryId, bucketId, flowId)
+
+Gets the flow versions from the specified registry and bucket for the specified flow for the current user
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.FlowApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+FlowApi apiInstance = new FlowApi();
+String registryId = "registryId_example"; // String | The registry id.
+String bucketId = "bucketId_example"; // String | The bucket id.
+String flowId = "flowId_example"; // String | The flow id.
+try {
+    BucketsEntity result = apiInstance.getVersions(registryId, bucketId, flowId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FlowApi#getVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **registryId** | **String**| The registry id. |
+ **bucketId** | **String**| The bucket id. |
+ **flowId** | **String**| The flow id. |
+
+### Return type
+
+[**BucketsEntity**](BucketsEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
 <a name="queryHistory"></a>
 # **queryHistory**
 > HistoryEntity queryHistory(offset, count, sortColumn, sortOrder, startDate, endDate, userIdentity, sourceId)
@@ -1681,7 +1987,7 @@ Name | Type | Description  | Notes
 # **scheduleComponents**
 > ScheduleComponentsEntity scheduleComponents(id, body)
 
-Schedule or unschedule comopnents in the specified Process Group.
+Schedule or unschedule components in the specified Process Group.
 
 
 

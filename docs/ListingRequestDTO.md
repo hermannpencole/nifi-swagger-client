@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **state** | **String** | The current state of the listing request. |  [optional]
 **queueSize** | [**QueueSizeDTO**](QueueSizeDTO.md) | The size of the queue |  [optional]
 **flowFileSummaries** | [**List&lt;FlowFileSummaryDTO&gt;**](FlowFileSummaryDTO.md) | The FlowFile summaries. The summaries will be populated once the request has completed. |  [optional]
-**destinationRunning** | **Boolean** | Whether the destination of the connection is running |  [optional]
 **sourceRunning** | **Boolean** | Whether the source of the connection is running |  [optional]
+**destinationRunning** | **Boolean** | Whether the destination of the connection is running |  [optional]
 
 
 

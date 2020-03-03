@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 <a name="getProvenance"></a>
 # **getProvenance**
-> ProvenanceEntity getProvenance(id, clusterNodeId)
+> ProvenanceEntity getProvenance(id, clusterNodeId, summarize, incrementalResults)
 
 Gets a provenance query
 
@@ -204,8 +204,10 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 ProvenanceApi apiInstance = new ProvenanceApi();
 String id = "id_example"; // String | The id of the provenance query.
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where this query exists if clustered.
+Boolean summarize = false; // Boolean | Whether or not incremental results are returned. If false, provenance events are only returned once the query completes. This property is true by default.
+Boolean incrementalResults = true; // Boolean | Whether or not to summarize provenance events returned. This property is false by default.
 try {
-    ProvenanceEntity result = apiInstance.getProvenance(id, clusterNodeId);
+    ProvenanceEntity result = apiInstance.getProvenance(id, clusterNodeId, summarize, incrementalResults);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProvenanceApi#getProvenance");
@@ -219,6 +221,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the provenance query. |
  **clusterNodeId** | **String**| The id of the node where this query exists if clustered. | [optional]
+ **summarize** | **Boolean**| Whether or not incremental results are returned. If false, provenance events are only returned once the query completes. This property is true by default. | [optional] [default to false]
+ **incrementalResults** | **Boolean**| Whether or not to summarize provenance events returned. This property is false by default. | [optional] [default to true]
 
 ### Return type
 

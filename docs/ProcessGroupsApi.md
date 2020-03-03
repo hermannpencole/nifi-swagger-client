@@ -4,7 +4,7 @@ All URIs are relative to *http://localhost/nifi-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**copySnippet**](ProcessGroupsApi.md#copySnippet) | **POST** /process-groups/{id}/snippet-instance | Copies a snippet
+[**copySnippet**](ProcessGroupsApi.md#copySnippet) | **POST** /process-groups/{id}/snippet-instance | Copies a snippet and discards it.
 [**createConnection**](ProcessGroupsApi.md#createConnection) | **POST** /process-groups/{id}/connections | Creates a connection
 [**createControllerService**](ProcessGroupsApi.md#createControllerService) | **POST** /process-groups/{id}/controller-services | Creates a new controller service
 [**createFunnel**](ProcessGroupsApi.md#createFunnel) | **POST** /process-groups/{id}/funnels | Creates a funnel
@@ -14,28 +14,34 @@ Method | HTTP request | Description
 [**createProcessGroup**](ProcessGroupsApi.md#createProcessGroup) | **POST** /process-groups/{id}/process-groups | Creates a process group
 [**createProcessor**](ProcessGroupsApi.md#createProcessor) | **POST** /process-groups/{id}/processors | Creates a new processor
 [**createRemoteProcessGroup**](ProcessGroupsApi.md#createRemoteProcessGroup) | **POST** /process-groups/{id}/remote-process-groups | Creates a new process group
-[**createTemplate**](ProcessGroupsApi.md#createTemplate) | **POST** /process-groups/{id}/templates | Creates a template
+[**createTemplate**](ProcessGroupsApi.md#createTemplate) | **POST** /process-groups/{id}/templates | Creates a template and discards the specified snippet.
+[**deleteVariableRegistryUpdateRequest**](ProcessGroupsApi.md#deleteVariableRegistryUpdateRequest) | **DELETE** /process-groups/{groupId}/variable-registry/update-requests/{updateId} | Deletes an update request for a process group&#39;s variable registry. If the request is not yet complete, it will automatically be cancelled.
 [**getConnections**](ProcessGroupsApi.md#getConnections) | **GET** /process-groups/{id}/connections | Gets all connections
 [**getFunnels**](ProcessGroupsApi.md#getFunnels) | **GET** /process-groups/{id}/funnels | Gets all funnels
 [**getInputPorts**](ProcessGroupsApi.md#getInputPorts) | **GET** /process-groups/{id}/input-ports | Gets all input ports
 [**getLabels**](ProcessGroupsApi.md#getLabels) | **GET** /process-groups/{id}/labels | Gets all labels
+[**getLocalModifications**](ProcessGroupsApi.md#getLocalModifications) | **GET** /process-groups/{id}/local-modifications | Gets a list of local modifications to the Process Group since it was last synchronized with the Flow Registry
 [**getOutputPorts**](ProcessGroupsApi.md#getOutputPorts) | **GET** /process-groups/{id}/output-ports | Gets all output ports
 [**getProcessGroup**](ProcessGroupsApi.md#getProcessGroup) | **GET** /process-groups/{id} | Gets a process group
 [**getProcessGroups**](ProcessGroupsApi.md#getProcessGroups) | **GET** /process-groups/{id}/process-groups | Gets all process groups
 [**getProcessors**](ProcessGroupsApi.md#getProcessors) | **GET** /process-groups/{id}/processors | Gets all processors
 [**getRemoteProcessGroups**](ProcessGroupsApi.md#getRemoteProcessGroups) | **GET** /process-groups/{id}/remote-process-groups | Gets all remote process groups
+[**getVariableRegistry**](ProcessGroupsApi.md#getVariableRegistry) | **GET** /process-groups/{id}/variable-registry | Gets a process group&#39;s variable registry
+[**getVariableRegistryUpdateRequest**](ProcessGroupsApi.md#getVariableRegistryUpdateRequest) | **GET** /process-groups/{groupId}/variable-registry/update-requests/{updateId} | Gets a process group&#39;s variable registry
 [**importTemplate**](ProcessGroupsApi.md#importTemplate) | **POST** /process-groups/{id}/templates/import | Imports a template
 [**instantiateTemplate**](ProcessGroupsApi.md#instantiateTemplate) | **POST** /process-groups/{id}/template-instance | Instantiates a template
 [**removeProcessGroup**](ProcessGroupsApi.md#removeProcessGroup) | **DELETE** /process-groups/{id} | Deletes a process group
+[**submitUpdateVariableRegistryRequest**](ProcessGroupsApi.md#submitUpdateVariableRegistryRequest) | **POST** /process-groups/{id}/variable-registry/update-requests | Submits a request to update a process group&#39;s variable registry
 [**updateProcessGroup**](ProcessGroupsApi.md#updateProcessGroup) | **PUT** /process-groups/{id} | Updates a process group
+[**updateVariableRegistry**](ProcessGroupsApi.md#updateVariableRegistry) | **PUT** /process-groups/{id}/variable-registry | Updates the contents of a Process Group&#39;s variable Registry
 [**uploadTemplate**](ProcessGroupsApi.md#uploadTemplate) | **POST** /process-groups/{id}/templates/upload | Uploads a template
 
 
 <a name="copySnippet"></a>
 # **copySnippet**
-> FlowSnippetEntity copySnippet(id, body)
+> FlowEntity copySnippet(id, body)
 
-Copies a snippet
+Copies a snippet and discards it.
 
 
 
@@ -58,7 +64,7 @@ ProcessGroupsApi apiInstance = new ProcessGroupsApi();
 String id = "id_example"; // String | The process group id.
 CopySnippetRequestEntity body = new CopySnippetRequestEntity(); // CopySnippetRequestEntity | The copy snippet request.
 try {
-    FlowSnippetEntity result = apiInstance.copySnippet(id, body);
+    FlowEntity result = apiInstance.copySnippet(id, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessGroupsApi#copySnippet");
@@ -75,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlowSnippetEntity**](FlowSnippetEntity.md)
+[**FlowEntity**](FlowEntity.md)
 
 ### Authorization
 
@@ -585,7 +591,7 @@ Name | Type | Description  | Notes
 # **createTemplate**
 > TemplateEntity createTemplate(id, body)
 
-Creates a template
+Creates a template and discards the specified snippet.
 
 
 
@@ -634,6 +640,61 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteVariableRegistryUpdateRequest"></a>
+# **deleteVariableRegistryUpdateRequest**
+> VariableRegistryUpdateRequestEntity deleteVariableRegistryUpdateRequest(groupId, updateId)
+
+Deletes an update request for a process group&#39;s variable registry. If the request is not yet complete, it will automatically be cancelled.
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ProcessGroupsApi apiInstance = new ProcessGroupsApi();
+String groupId = "groupId_example"; // String | The process group id.
+String updateId = "updateId_example"; // String | The ID of the Variable Registry Update Request
+try {
+    VariableRegistryUpdateRequestEntity result = apiInstance.deleteVariableRegistryUpdateRequest(groupId, updateId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProcessGroupsApi#deleteVariableRegistryUpdateRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| The process group id. |
+ **updateId** | **String**| The ID of the Variable Registry Update Request |
+
+### Return type
+
+[**VariableRegistryUpdateRequestEntity**](VariableRegistryUpdateRequestEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
  - **Accept**: application/json
 
 <a name="getConnections"></a>
@@ -848,6 +909,59 @@ Name | Type | Description  | Notes
  - **Content-Type**: */*
  - **Accept**: application/json
 
+<a name="getLocalModifications"></a>
+# **getLocalModifications**
+> FlowComparisonEntity getLocalModifications(id)
+
+Gets a list of local modifications to the Process Group since it was last synchronized with the Flow Registry
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ProcessGroupsApi apiInstance = new ProcessGroupsApi();
+String id = "id_example"; // String | The process group id.
+try {
+    FlowComparisonEntity result = apiInstance.getLocalModifications(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProcessGroupsApi#getLocalModifications");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The process group id. |
+
+### Return type
+
+[**FlowComparisonEntity**](FlowComparisonEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
 <a name="getOutputPorts"></a>
 # **getOutputPorts**
 > OutputPortsEntity getOutputPorts(id)
@@ -956,7 +1070,7 @@ Name | Type | Description  | Notes
 
 <a name="getProcessGroups"></a>
 # **getProcessGroups**
-> ProcessorsEntity getProcessGroups(id)
+> ProcessGroupsEntity getProcessGroups(id)
 
 Gets all process groups
 
@@ -980,7 +1094,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 ProcessGroupsApi apiInstance = new ProcessGroupsApi();
 String id = "id_example"; // String | The process group id.
 try {
-    ProcessorsEntity result = apiInstance.getProcessGroups(id);
+    ProcessGroupsEntity result = apiInstance.getProcessGroups(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessGroupsApi#getProcessGroups");
@@ -996,7 +1110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProcessorsEntity**](ProcessorsEntity.md)
+[**ProcessGroupsEntity**](ProcessGroupsEntity.md)
 
 ### Authorization
 
@@ -1009,7 +1123,7 @@ Name | Type | Description  | Notes
 
 <a name="getProcessors"></a>
 # **getProcessors**
-> ProcessorsEntity getProcessors(id)
+> ProcessorsEntity getProcessors(id, includeDescendantGroups)
 
 Gets all processors
 
@@ -1032,8 +1146,9 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessGroupsApi apiInstance = new ProcessGroupsApi();
 String id = "id_example"; // String | The process group id.
+Boolean includeDescendantGroups = false; // Boolean | Whether or not to include processors from descendant process groups
 try {
-    ProcessorsEntity result = apiInstance.getProcessors(id);
+    ProcessorsEntity result = apiInstance.getProcessors(id, includeDescendantGroups);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessGroupsApi#getProcessors");
@@ -1046,6 +1161,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
+ **includeDescendantGroups** | **Boolean**| Whether or not to include processors from descendant process groups | [optional] [default to false]
 
 ### Return type
 
@@ -1103,6 +1219,116 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RemoteProcessGroupsEntity**](RemoteProcessGroupsEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+<a name="getVariableRegistry"></a>
+# **getVariableRegistry**
+> VariableRegistryEntity getVariableRegistry(id, includeAncestorGroups)
+
+Gets a process group&#39;s variable registry
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ProcessGroupsApi apiInstance = new ProcessGroupsApi();
+String id = "id_example"; // String | The process group id.
+Boolean includeAncestorGroups = true; // Boolean | Whether or not to include ancestor groups
+try {
+    VariableRegistryEntity result = apiInstance.getVariableRegistry(id, includeAncestorGroups);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProcessGroupsApi#getVariableRegistry");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The process group id. |
+ **includeAncestorGroups** | **Boolean**| Whether or not to include ancestor groups | [optional] [default to true]
+
+### Return type
+
+[**VariableRegistryEntity**](VariableRegistryEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+<a name="getVariableRegistryUpdateRequest"></a>
+# **getVariableRegistryUpdateRequest**
+> VariableRegistryUpdateRequestEntity getVariableRegistryUpdateRequest(groupId, updateId)
+
+Gets a process group&#39;s variable registry
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ProcessGroupsApi apiInstance = new ProcessGroupsApi();
+String groupId = "groupId_example"; // String | The process group id.
+String updateId = "updateId_example"; // String | The ID of the Variable Registry Update Request
+try {
+    VariableRegistryUpdateRequestEntity result = apiInstance.getVariableRegistryUpdateRequest(groupId, updateId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProcessGroupsApi#getVariableRegistryUpdateRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| The process group id. |
+ **updateId** | **String**| The ID of the Variable Registry Update Request |
+
+### Return type
+
+[**VariableRegistryUpdateRequestEntity**](VariableRegistryUpdateRequestEntity.md)
 
 ### Authorization
 
@@ -1278,6 +1504,61 @@ Name | Type | Description  | Notes
  - **Content-Type**: */*
  - **Accept**: application/json
 
+<a name="submitUpdateVariableRegistryRequest"></a>
+# **submitUpdateVariableRegistryRequest**
+> VariableRegistryUpdateRequestEntity submitUpdateVariableRegistryRequest(id, body)
+
+Submits a request to update a process group&#39;s variable registry
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ProcessGroupsApi apiInstance = new ProcessGroupsApi();
+String id = "id_example"; // String | The process group id.
+VariableRegistryEntity body = new VariableRegistryEntity(); // VariableRegistryEntity | The variable registry configuration details.
+try {
+    VariableRegistryUpdateRequestEntity result = apiInstance.submitUpdateVariableRegistryRequest(id, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProcessGroupsApi#submitUpdateVariableRegistryRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The process group id. |
+ **body** | [**VariableRegistryEntity**](VariableRegistryEntity.md)| The variable registry configuration details. |
+
+### Return type
+
+[**VariableRegistryUpdateRequestEntity**](VariableRegistryUpdateRequestEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="updateProcessGroup"></a>
 # **updateProcessGroup**
 > ProcessGroupEntity updateProcessGroup(id, body)
@@ -1333,9 +1614,64 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="updateVariableRegistry"></a>
+# **updateVariableRegistry**
+> VariableRegistryEntity updateVariableRegistry(id, body)
+
+Updates the contents of a Process Group&#39;s variable Registry
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ProcessGroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ProcessGroupsApi apiInstance = new ProcessGroupsApi();
+String id = "id_example"; // String | The process group id.
+VariableRegistryEntity body = new VariableRegistryEntity(); // VariableRegistryEntity | The variable registry configuration details.
+try {
+    VariableRegistryEntity result = apiInstance.updateVariableRegistry(id, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProcessGroupsApi#updateVariableRegistry");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The process group id. |
+ **body** | [**VariableRegistryEntity**](VariableRegistryEntity.md)| The variable registry configuration details. |
+
+### Return type
+
+[**VariableRegistryEntity**](VariableRegistryEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="uploadTemplate"></a>
 # **uploadTemplate**
-> TemplateEntity uploadTemplate(id, template)
+> TemplateEntity uploadTemplate(id)
 
 Uploads a template
 
@@ -1358,9 +1694,8 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessGroupsApi apiInstance = new ProcessGroupsApi();
 String id = "id_example"; // String | The process group id.
-File template = new File("/path/to/file.txt"); // File | 
 try {
-    TemplateEntity result = apiInstance.uploadTemplate(id, template);
+    TemplateEntity result = apiInstance.uploadTemplate(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessGroupsApi#uploadTemplate");
@@ -1373,7 +1708,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The process group id. |
- **template** | **File**|  | [optional]
 
 ### Return type
 

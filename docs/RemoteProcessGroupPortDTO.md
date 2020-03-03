@@ -4,7 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | The id of the target port. |  [optional]
+**id** | **String** | The id of the port. |  [optional]
+**targetId** | **String** | The id of the target port. |  [optional]
+**versionedComponentId** | **String** | The ID of the corresponding component that is under version control |  [optional]
 **groupId** | **String** | The id of the remote process group that the port resides in. |  [optional]
 **name** | **String** | The name of the target port. |  [optional]
 **comments** | **String** | The comments as configured on the target port. |  [optional]
@@ -14,6 +16,7 @@ Name | Type | Description | Notes
 **exists** | **Boolean** | Whether the target port exists. |  [optional]
 **targetRunning** | **Boolean** | Whether the target port is running. |  [optional]
 **connected** | **Boolean** | Whether the port has either an incoming or outgoing connection. |  [optional]
+**batchSettings** | [**BatchSettingsDTO**](BatchSettingsDTO.md) | The batch settings for data transmission. |  [optional]
 
 
 

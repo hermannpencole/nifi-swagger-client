@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | The id of the connectable component. | 
+**versionedComponentId** | **String** | The ID of the corresponding component that is under version control |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) | The type of component the connectable is. | 
 **groupId** | **String** | The id of the group that the connectable component resides in | 
 **name** | **String** | The name of the connectable component |  [optional]

@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**niFiVersion** | **String** | The version of this NiFi. |  [optional]
 **javaVendor** | **String** | Java JVM vendor |  [optional]
 **javaVersion** | **String** | Java version |  [optional]
 **osName** | **String** | Host operating system name |  [optional]
@@ -12,8 +13,7 @@ Name | Type | Description | Notes
 **buildTag** | **String** | Build tag |  [optional]
 **buildRevision** | **String** | Build revision or commit hash |  [optional]
 **buildBranch** | **String** | Build branch |  [optional]
-**buildTimestamp** | [**DateTime**](DateTime.md) | Build timestamp |  [optional]
-**niFiVersion** | **String** | The version of this NiFi. |  [optional]
+**buildTimestamp** | [**OffsetDateTime**](OffsetDateTime.md) | Build timestamp |  [optional]
 
 
 

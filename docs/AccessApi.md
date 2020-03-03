@@ -10,6 +10,11 @@ Method | HTTP request | Description
 [**createUiExtensionToken**](AccessApi.md#createUiExtensionToken) | **POST** /access/ui-extension-token | Creates a single use access token for accessing a NiFi UI extension.
 [**getAccessStatus**](AccessApi.md#getAccessStatus) | **GET** /access | Gets the status the client&#39;s access
 [**getLoginConfig**](AccessApi.md#getLoginConfig) | **GET** /access/config | Retrieves the access configuration for this NiFi
+[**knoxCallback**](AccessApi.md#knoxCallback) | **GET** /access/knox/callback | Redirect/callback URI for processing the result of the Apache Knox login sequence.
+[**knoxRequest**](AccessApi.md#knoxRequest) | **GET** /access/knox/request | Initiates a request to authenticate through Apache Knox.
+[**oidcCallback**](AccessApi.md#oidcCallback) | **GET** /access/oidc/callback | Redirect/callback URI for processing the result of the OpenId Connect login sequence.
+[**oidcExchange**](AccessApi.md#oidcExchange) | **POST** /access/oidc/exchange | Retrieves a JWT following a successful login sequence using the configured OpenId Connect provider.
+[**oidcRequest**](AccessApi.md#oidcRequest) | **GET** /access/oidc/request | Initiates a request to authenticate through the configured OpenId Connect provider.
 
 
 <a name="createAccessToken"></a>
@@ -263,4 +268,205 @@ No authorization required
 
  - **Content-Type**: */*
  - **Accept**: application/json
+
+<a name="knoxCallback"></a>
+# **knoxCallback**
+> knoxCallback()
+
+Redirect/callback URI for processing the result of the Apache Knox login sequence.
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
+
+
+AccessApi apiInstance = new AccessApi();
+try {
+    apiInstance.knoxCallback();
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccessApi#knoxCallback");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: */*
+
+<a name="knoxRequest"></a>
+# **knoxRequest**
+> knoxRequest()
+
+Initiates a request to authenticate through Apache Knox.
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
+
+
+AccessApi apiInstance = new AccessApi();
+try {
+    apiInstance.knoxRequest();
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccessApi#knoxRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: */*
+
+<a name="oidcCallback"></a>
+# **oidcCallback**
+> oidcCallback()
+
+Redirect/callback URI for processing the result of the OpenId Connect login sequence.
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
+
+
+AccessApi apiInstance = new AccessApi();
+try {
+    apiInstance.oidcCallback();
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccessApi#oidcCallback");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: */*
+
+<a name="oidcExchange"></a>
+# **oidcExchange**
+> String oidcExchange()
+
+Retrieves a JWT following a successful login sequence using the configured OpenId Connect provider.
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
+
+
+AccessApi apiInstance = new AccessApi();
+try {
+    String result = apiInstance.oidcExchange();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccessApi#oidcExchange");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: text/plain
+
+<a name="oidcRequest"></a>
+# **oidcRequest**
+> oidcRequest()
+
+Initiates a request to authenticate through the configured OpenId Connect provider.
+
+Note: This endpoint is subject to change as NiFi and it&#39;s REST API evolve.
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.client.AccessApi;
+
+
+AccessApi apiInstance = new AccessApi();
+try {
+    apiInstance.oidcRequest();
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccessApi#oidcRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: */*
 

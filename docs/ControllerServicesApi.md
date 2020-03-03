@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="clearState"></a>
 # **clearState**
-> ComponentStateDTO clearState(id)
+> ComponentStateEntity clearState(id)
 
 Clears the state for a controller service
 
@@ -40,7 +40,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 ControllerServicesApi apiInstance = new ControllerServicesApi();
 String id = "id_example"; // String | The controller service id.
 try {
-    ComponentStateDTO result = apiInstance.clearState(id);
+    ComponentStateEntity result = apiInstance.clearState(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ControllerServicesApi#clearState");
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComponentStateDTO**](ComponentStateDTO.md)
+[**ComponentStateEntity**](ComponentStateEntity.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 <a name="getControllerServiceReferences"></a>
 # **getControllerServiceReferences**
-> ControllerServiceEntity getControllerServiceReferences(id)
+> ControllerServiceReferencingComponentsEntity getControllerServiceReferences(id)
 
 Gets a controller service
 
@@ -146,7 +146,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 ControllerServicesApi apiInstance = new ControllerServicesApi();
 String id = "id_example"; // String | The controller service id.
 try {
-    ControllerServiceEntity result = apiInstance.getControllerServiceReferences(id);
+    ControllerServiceReferencingComponentsEntity result = apiInstance.getControllerServiceReferences(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ControllerServicesApi#getControllerServiceReferences");
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerServiceEntity**](ControllerServiceEntity.md)
+[**ControllerServiceReferencingComponentsEntity**](ControllerServiceReferencingComponentsEntity.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 <a name="getState"></a>
 # **getState**
-> ComponentStateDTO getState(id)
+> ComponentStateEntity getState(id)
 
 Gets the state for a controller service
 
@@ -254,7 +254,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 ControllerServicesApi apiInstance = new ControllerServicesApi();
 String id = "id_example"; // String | The controller service id.
 try {
-    ComponentStateDTO result = apiInstance.getState(id);
+    ComponentStateEntity result = apiInstance.getState(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ControllerServicesApi#getState");
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComponentStateDTO**](ComponentStateDTO.md)
+[**ComponentStateEntity**](ComponentStateEntity.md)
 
 ### Authorization
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="clearState"></a>
 # **clearState**
-> ComponentStateDTO clearState(id)
+> ComponentStateEntity clearState(id)
 
 Clears the state for a processor
 
@@ -38,7 +38,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 ProcessorsApi apiInstance = new ProcessorsApi();
 String id = "id_example"; // String | The processor id.
 try {
-    ComponentStateDTO result = apiInstance.clearState(id);
+    ComponentStateEntity result = apiInstance.clearState(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessorsApi#clearState");
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComponentStateDTO**](ComponentStateDTO.md)
+[**ComponentStateEntity**](ComponentStateEntity.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 <a name="getState"></a>
 # **getState**
-> ComponentStateDTO getState(id)
+> ComponentStateEntity getState(id)
 
 Gets the state for a processor
 
@@ -258,7 +258,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 ProcessorsApi apiInstance = new ProcessorsApi();
 String id = "id_example"; // String | The processor id.
 try {
-    ComponentStateDTO result = apiInstance.getState(id);
+    ComponentStateEntity result = apiInstance.getState(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessorsApi#getState");
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComponentStateDTO**](ComponentStateDTO.md)
+[**ComponentStateEntity**](ComponentStateEntity.md)
 
 ### Authorization
 

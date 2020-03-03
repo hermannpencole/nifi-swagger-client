@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **String** | The name of the prcessor. |  [optional]
 **type** | **String** | The type of the processor. |  [optional]
 **runStatus** | [**RunStatusEnum**](#RunStatusEnum) | The state of the processor. |  [optional]
+**executionNode** | [**ExecutionNodeEnum**](#ExecutionNodeEnum) | Indicates the node where the process will execute. |  [optional]
 **bytesRead** | **Long** | The number of bytes read by this Processor in the last 5 mintues |  [optional]
 **bytesWritten** | **Long** | The number of bytes written by this Processor in the last 5 minutes |  [optional]
 **read** | **String** | The number of bytes read in the last 5 minutes. |  [optional]
@@ -34,6 +35,14 @@ RUNNING | &quot;RUNNING&quot;
 STOPPED | &quot;STOPPED&quot;
 DISABLED | &quot;DISABLED&quot;
 INVALID | &quot;INVALID&quot;
+
+
+<a name="ExecutionNodeEnum"></a>
+## Enum: ExecutionNodeEnum
+Name | Value
+---- | -----
+ALL | &quot;ALL&quot;
+PRIMARY | &quot;PRIMARY&quot;
 
 
 

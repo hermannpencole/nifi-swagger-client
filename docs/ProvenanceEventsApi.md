@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getInputContent"></a>
 # **getInputContent**
-> getInputContent(id, clusterNodeId)
+> StreamingOutput getInputContent(id, clusterNodeId)
 
 Gets the input content for a provenance event
 
@@ -37,7 +37,8 @@ ProvenanceEventsApi apiInstance = new ProvenanceEventsApi();
 String id = "id_example"; // String | The provenance event id.
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where the content exists if clustered.
 try {
-    apiInstance.getInputContent(id, clusterNodeId);
+    StreamingOutput result = apiInstance.getInputContent(id, clusterNodeId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProvenanceEventsApi#getInputContent");
     e.printStackTrace();
@@ -53,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**StreamingOutput**](StreamingOutput.md)
 
 ### Authorization
 
@@ -66,7 +67,7 @@ null (empty response body)
 
 <a name="getOutputContent"></a>
 # **getOutputContent**
-> getOutputContent(id, clusterNodeId)
+> StreamingOutput getOutputContent(id, clusterNodeId)
 
 Gets the output content for a provenance event
 
@@ -91,7 +92,8 @@ ProvenanceEventsApi apiInstance = new ProvenanceEventsApi();
 String id = "id_example"; // String | The provenance event id.
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where the content exists if clustered.
 try {
-    apiInstance.getOutputContent(id, clusterNodeId);
+    StreamingOutput result = apiInstance.getOutputContent(id, clusterNodeId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProvenanceEventsApi#getOutputContent");
     e.printStackTrace();
@@ -107,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**StreamingOutput**](StreamingOutput.md)
 
 ### Authorization
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **remoteProcessGroupStatusSnapshots** | [**List&lt;RemoteProcessGroupStatusSnapshotEntity&gt;**](RemoteProcessGroupStatusSnapshotEntity.md) | The status of all remote process groups in the process group. |  [optional]
 **inputPortStatusSnapshots** | [**List&lt;PortStatusSnapshotEntity&gt;**](PortStatusSnapshotEntity.md) | The status of all input ports in the process group. |  [optional]
 **outputPortStatusSnapshots** | [**List&lt;PortStatusSnapshotEntity&gt;**](PortStatusSnapshotEntity.md) | The status of all output ports in the process group. |  [optional]
+**versionedFlowState** | [**VersionedFlowStateEnum**](#VersionedFlowStateEnum) | The current state of the Process Group, as it relates to the Versioned Flow |  [optional]
 **flowFilesIn** | **Integer** | The number of FlowFiles that have come into this ProcessGroup in the last 5 minutes |  [optional]
 **bytesIn** | **Long** | The number of bytes that have come into this ProcessGroup in the last 5 minutes |  [optional]
 **input** | **String** | The input count/size for the process group in the last 5 minutes (pretty printed). |  [optional]
@@ -37,6 +38,17 @@ Name | Type | Description | Notes
 **flowFilesSent** | **Integer** | The number of FlowFiles sent to an external sink by components within this ProcessGroup in the last 5 minutes |  [optional]
 **sent** | **String** | The count/size sent from this process group in the last 5 minutes. |  [optional]
 **activeThreadCount** | **Integer** | The active thread count for this process group. |  [optional]
+
+
+<a name="VersionedFlowStateEnum"></a>
+## Enum: VersionedFlowStateEnum
+Name | Value
+---- | -----
+LOCALLY_MODIFIED_DESCENDANT | &quot;LOCALLY_MODIFIED_DESCENDANT&quot;
+LOCALLY_MODIFIED | &quot;LOCALLY_MODIFIED&quot;
+STALE | &quot;STALE&quot;
+LOCALLY_MODIFIED_AND_STALE | &quot;LOCALLY_MODIFIED_AND_STALE&quot;
+UP_TO_DATE | &quot;UP_TO_DATE&quot;
 
 
 

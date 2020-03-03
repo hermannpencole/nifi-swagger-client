@@ -31,7 +31,7 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 SystemDiagnosticsApi apiInstance = new SystemDiagnosticsApi();
-Boolean nodewise = true; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
+Boolean nodewise = false; // Boolean | Whether or not to include the breakdown per node. Optional, defaults to false
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where to get the status.
 try {
     SystemDiagnosticsEntity result = apiInstance.getSystemDiagnostics(nodewise, clusterNodeId);
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional]
+ **nodewise** | **Boolean**| Whether or not to include the breakdown per node. Optional, defaults to false | [optional] [default to false]
  **clusterNodeId** | **String**| The id of the node where to get the status. | [optional]
 
 ### Return type
