@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **policiesPermissions** | [**PermissionsDTO**](PermissionsDTO.md) | Permissions for accessing the policies. |  [optional]
 **systemPermissions** | [**PermissionsDTO**](PermissionsDTO.md) | Permissions for accessing system. |  [optional]
 **restrictedComponentsPermissions** | [**PermissionsDTO**](PermissionsDTO.md) | Permissions for accessing restricted components. Note: the read permission are not used and will always be false. |  [optional]
+**canVersionFlows** | **Boolean** | Whether the current user can version flows. |  [optional]
 
 
 

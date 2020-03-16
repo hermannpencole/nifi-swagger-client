@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **buildTag** | **String** | Build tag |  [optional]
 **buildRevision** | **String** | Build revision or commit hash |  [optional]
 **buildBranch** | **String** | Build branch |  [optional]
-**buildTimestamp** | [**DateTime**](DateTime.md) | Build timestamp |  [optional]
+**buildTimestamp** | [**OffsetDateTime**](OffsetDateTime.md) | Build timestamp |  [optional]
 
 
 

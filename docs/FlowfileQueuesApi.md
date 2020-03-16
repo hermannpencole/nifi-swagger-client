@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteListingRequest"></a>
 # **deleteListingRequest**
-> DropRequestEntity deleteListingRequest(id, listingRequestId)
+> ListingRequestEntity deleteListingRequest(id, listingRequestId)
 
 Cancels and/or removes a request to list the contents of this connection.
 
@@ -147,7 +147,7 @@ FlowfileQueuesApi apiInstance = new FlowfileQueuesApi();
 String id = "id_example"; // String | The connection id.
 String listingRequestId = "listingRequestId_example"; // String | The listing request id.
 try {
-    DropRequestEntity result = apiInstance.deleteListingRequest(id, listingRequestId);
+    ListingRequestEntity result = apiInstance.deleteListingRequest(id, listingRequestId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowfileQueuesApi#deleteListingRequest");
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DropRequestEntity**](DropRequestEntity.md)
+[**ListingRequestEntity**](ListingRequestEntity.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="downloadFlowFileContent"></a>
 # **downloadFlowFileContent**
-> downloadFlowFileContent(id, flowfileUuid, clientId, clusterNodeId)
+> StreamingOutput downloadFlowFileContent(id, flowfileUuid, clientId, clusterNodeId)
 
 Gets the content for a FlowFile in a Connection.
 
@@ -204,7 +204,8 @@ String flowfileUuid = "flowfileUuid_example"; // String | The flowfile uuid.
 String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where the content exists if clustered.
 try {
-    apiInstance.downloadFlowFileContent(id, flowfileUuid, clientId, clusterNodeId);
+    StreamingOutput result = apiInstance.downloadFlowFileContent(id, flowfileUuid, clientId, clusterNodeId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowfileQueuesApi#downloadFlowFileContent");
     e.printStackTrace();
@@ -222,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**StreamingOutput**](StreamingOutput.md)
 
 ### Authorization
 
@@ -290,7 +291,7 @@ Name | Type | Description  | Notes
 
 <a name="getFlowFile"></a>
 # **getFlowFile**
-> getFlowFile(id, flowfileUuid, clusterNodeId)
+> FlowFileEntity getFlowFile(id, flowfileUuid, clusterNodeId)
 
 Gets a FlowFile from a Connection.
 
@@ -316,7 +317,8 @@ String id = "id_example"; // String | The connection id.
 String flowfileUuid = "flowfileUuid_example"; // String | The flowfile uuid.
 String clusterNodeId = "clusterNodeId_example"; // String | The id of the node where the content exists if clustered.
 try {
-    apiInstance.getFlowFile(id, flowfileUuid, clusterNodeId);
+    FlowFileEntity result = apiInstance.getFlowFile(id, flowfileUuid, clusterNodeId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowfileQueuesApi#getFlowFile");
     e.printStackTrace();
@@ -333,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**FlowFileEntity**](FlowFileEntity.md)
 
 ### Authorization
 

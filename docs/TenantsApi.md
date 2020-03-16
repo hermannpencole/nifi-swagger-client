@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**getUsers**](TenantsApi.md#getUsers) | **GET** /tenants/users | Gets all users
 [**removeUser**](TenantsApi.md#removeUser) | **DELETE** /tenants/users/{id} | Deletes a user
 [**removeUserGroup**](TenantsApi.md#removeUserGroup) | **DELETE** /tenants/user-groups/{id} | Deletes a user group
-[**searchCluster**](TenantsApi.md#searchCluster) | **GET** /tenants/search-results | Searches for a tenant with the specified identity
+[**searchTenants**](TenantsApi.md#searchTenants) | **GET** /tenants/search-results | Searches for a tenant with the specified identity
 [**updateUser**](TenantsApi.md#updateUser) | **PUT** /tenants/users/{id} | Updates a user
 [**updateUserGroup**](TenantsApi.md#updateUserGroup) | **PUT** /tenants/user-groups/{id} | Updates a user group
 
@@ -441,9 +441,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: */*
  - **Accept**: application/json
 
-<a name="searchCluster"></a>
-# **searchCluster**
-> TenantsEntity searchCluster(q)
+<a name="searchTenants"></a>
+# **searchTenants**
+> TenantsEntity searchTenants(q)
 
 Searches for a tenant with the specified identity
 
@@ -467,10 +467,10 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 TenantsApi apiInstance = new TenantsApi();
 String q = "q_example"; // String | Identity to search for.
 try {
-    TenantsEntity result = apiInstance.searchCluster(q);
+    TenantsEntity result = apiInstance.searchTenants(q);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TenantsApi#searchCluster");
+    System.err.println("Exception when calling TenantsApi#searchTenants");
     e.printStackTrace();
 }
 ```

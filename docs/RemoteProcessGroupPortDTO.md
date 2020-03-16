@@ -4,7 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | The id of the target port. |  [optional]
+**id** | **String** | The id of the port. |  [optional]
+**targetId** | **String** | The id of the target port. |  [optional]
+**versionedComponentId** | **String** | The ID of the corresponding component that is under version control |  [optional]
 **groupId** | **String** | The id of the remote process group that the port resides in. |  [optional]
 **name** | **String** | The name of the target port. |  [optional]
 **comments** | **String** | The comments as configured on the target port. |  [optional]

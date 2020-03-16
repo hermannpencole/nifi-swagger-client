@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="clearState"></a>
 # **clearState**
-> ComponentStateDTO clearState(id)
+> ComponentStateEntity clearState(id)
 
 Clears the state for a reporting task
 
@@ -38,7 +38,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 ReportingTasksApi apiInstance = new ReportingTasksApi();
 String id = "id_example"; // String | The reporting task id.
 try {
-    ComponentStateDTO result = apiInstance.clearState(id);
+    ComponentStateEntity result = apiInstance.clearState(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportingTasksApi#clearState");
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComponentStateDTO**](ComponentStateDTO.md)
+[**ComponentStateEntity**](ComponentStateEntity.md)
 
 ### Authorization
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 <a name="getState"></a>
 # **getState**
-> ComponentStateDTO getState(id)
+> ComponentStateEntity getState(id)
 
 Gets the state for a reporting task
 
@@ -199,7 +199,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 ReportingTasksApi apiInstance = new ReportingTasksApi();
 String id = "id_example"; // String | The reporting task id.
 try {
-    ComponentStateDTO result = apiInstance.getState(id);
+    ComponentStateEntity result = apiInstance.getState(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportingTasksApi#getState");
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComponentStateDTO**](ComponentStateDTO.md)
+[**ComponentStateEntity**](ComponentStateEntity.md)
 
 ### Authorization
 

@@ -6,14 +6,19 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createBulletin**](ControllerApi.md#createBulletin) | **POST** /controller/bulletin | Creates a new bulletin
 [**createControllerService**](ControllerApi.md#createControllerService) | **POST** /controller/controller-services | Creates a new controller service
+[**createRegistryClient**](ControllerApi.md#createRegistryClient) | **POST** /controller/registry-clients | Creates a new registry client
 [**createReportingTask**](ControllerApi.md#createReportingTask) | **POST** /controller/reporting-tasks | Creates a new reporting task
 [**deleteHistory**](ControllerApi.md#deleteHistory) | **DELETE** /controller/history | Purges history
 [**deleteNode**](ControllerApi.md#deleteNode) | **DELETE** /controller/cluster/nodes/{id} | Removes a node from the cluster
+[**deleteRegistryClient**](ControllerApi.md#deleteRegistryClient) | **DELETE** /controller/registry-clients/{id} | Deletes a registry client
 [**getCluster**](ControllerApi.md#getCluster) | **GET** /controller/cluster | Gets the contents of the cluster
 [**getControllerConfig**](ControllerApi.md#getControllerConfig) | **GET** /controller/config | Retrieves the configuration for this NiFi Controller
 [**getNode**](ControllerApi.md#getNode) | **GET** /controller/cluster/nodes/{id} | Gets a node in the cluster
+[**getRegistryClient**](ControllerApi.md#getRegistryClient) | **GET** /controller/registry-clients/{id} | Gets a registry client
+[**getRegistryClients**](ControllerApi.md#getRegistryClients) | **GET** /controller/registry-clients | Gets the listing of available registry clients
 [**updateControllerConfig**](ControllerApi.md#updateControllerConfig) | **PUT** /controller/config | Retrieves the configuration for this NiFi
 [**updateNode**](ControllerApi.md#updateNode) | **PUT** /controller/cluster/nodes/{id} | Updates a node in the cluster
+[**updateRegistryClient**](ControllerApi.md#updateRegistryClient) | **PUT** /controller/registry-clients/{id} | Updates a registry client
 
 
 <a name="createBulletin"></a>
@@ -112,6 +117,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ControllerServiceEntity**](ControllerServiceEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="createRegistryClient"></a>
+# **createRegistryClient**
+> RegistryClientEntity createRegistryClient(body)
+
+Creates a new registry client
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ControllerApi apiInstance = new ControllerApi();
+RegistryClientEntity body = new RegistryClientEntity(); // RegistryClientEntity | The registry configuration details.
+try {
+    RegistryClientEntity result = apiInstance.createRegistryClient(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ControllerApi#createRegistryClient");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RegistryClientEntity**](RegistryClientEntity.md)| The registry configuration details. |
+
+### Return type
+
+[**RegistryClientEntity**](RegistryClientEntity.md)
 
 ### Authorization
 
@@ -281,6 +339,63 @@ Name | Type | Description  | Notes
  - **Content-Type**: */*
  - **Accept**: application/json
 
+<a name="deleteRegistryClient"></a>
+# **deleteRegistryClient**
+> RegistryClientEntity deleteRegistryClient(id, version, clientId)
+
+Deletes a registry client
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ControllerApi apiInstance = new ControllerApi();
+String id = "id_example"; // String | The registry id.
+String version = "version_example"; // String | The revision is used to verify the client is working with the latest version of the flow.
+String clientId = "clientId_example"; // String | If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response.
+try {
+    RegistryClientEntity result = apiInstance.deleteRegistryClient(id, version, clientId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ControllerApi#deleteRegistryClient");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The registry id. |
+ **version** | **String**| The revision is used to verify the client is working with the latest version of the flow. | [optional]
+ **clientId** | **String**| If the client id is not specified, new one will be generated. This value (whether specified or generated) is included in the response. | [optional]
+
+### Return type
+
+[**RegistryClientEntity**](RegistryClientEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
 <a name="getCluster"></a>
 # **getCluster**
 > ClusterEntity getCluster()
@@ -432,6 +547,108 @@ Name | Type | Description  | Notes
  - **Content-Type**: */*
  - **Accept**: application/json
 
+<a name="getRegistryClient"></a>
+# **getRegistryClient**
+> RegistryClientEntity getRegistryClient(id)
+
+Gets a registry client
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ControllerApi apiInstance = new ControllerApi();
+String id = "id_example"; // String | The registry id.
+try {
+    RegistryClientEntity result = apiInstance.getRegistryClient(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ControllerApi#getRegistryClient");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The registry id. |
+
+### Return type
+
+[**RegistryClientEntity**](RegistryClientEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+<a name="getRegistryClients"></a>
+# **getRegistryClients**
+> RegistryClientsEntity getRegistryClients()
+
+Gets the listing of available registry clients
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ControllerApi apiInstance = new ControllerApi();
+try {
+    RegistryClientsEntity result = apiInstance.getRegistryClients();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ControllerApi#getRegistryClients");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**RegistryClientsEntity**](RegistryClientsEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
 <a name="updateControllerConfig"></a>
 # **updateControllerConfig**
 > ControllerConfigurationEntity updateControllerConfig(body)
@@ -530,6 +747,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NodeEntity**](NodeEntity.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateRegistryClient"></a>
+# **updateRegistryClient**
+> RegistryClientEntity updateRegistryClient(id, body)
+
+Updates a registry client
+
+
+
+### Example
+```java
+// Import classes:
+//import com.github.hermannpencole.nifi.swagger.ApiClient;
+//import com.github.hermannpencole.nifi.swagger.ApiException;
+//import com.github.hermannpencole.nifi.swagger.Configuration;
+//import com.github.hermannpencole.nifi.swagger.auth.*;
+//import com.github.hermannpencole.nifi.swagger.client.ControllerApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: auth
+OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ControllerApi apiInstance = new ControllerApi();
+String id = "id_example"; // String | The registry id.
+RegistryClientEntity body = new RegistryClientEntity(); // RegistryClientEntity | The registry configuration details.
+try {
+    RegistryClientEntity result = apiInstance.updateRegistryClient(id, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ControllerApi#updateRegistryClient");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The registry id. |
+ **body** | [**RegistryClientEntity**](RegistryClientEntity.md)| The registry configuration details. |
+
+### Return type
+
+[**RegistryClientEntity**](RegistryClientEntity.md)
 
 ### Authorization
 
